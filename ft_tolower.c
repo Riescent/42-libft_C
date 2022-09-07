@@ -1,21 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vfries <vfries@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/07 19:22:16 by vfries            #+#    #+#             */
-/*   Updated: 2022/09/07 20:21:13 by vfries           ###   ########lyon.fr   */
+/*   Created: 2022/09/07 20:21:27 by vfries            #+#    #+#             */
+/*   Updated: 2022/09/07 20:22:09 by vfries           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
-
-int	ft_isalpha(int c);
-int	ft_toupper(int c);
-int	ft_isdigit(int c);
-int	ft_tolower(int c);
-
-#endif
+int	ft_tolower(int c)
+{
+	if (c >= 'A' && c <= 'Z')
+		return (c + 32);
+	return (c);
+}
