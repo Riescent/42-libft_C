@@ -1,23 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vfries <vfries@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/07 19:22:16 by vfries            #+#    #+#             */
-/*   Updated: 2022/09/14 19:50:23 by vfries           ###   ########lyon.fr   */
+/*   Created: 2022/09/14 14:14:18 by vfries            #+#    #+#             */
+/*   Updated: 2022/09/14 19:47:01 by vfries           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+char	*ft_strchr(char *s, int c)
+{
+	int	i;
 
-int		ft_isalpha(int c);
-int		ft_toupper(int c);
-int		ft_isdigit(int c);
-int		ft_tolower(int c);
-int		ft_isalnum(int c);
-char	*ft_strchr(char *s, int c);
-
-#endif
+	i = -1;
+	while (s[++i])
+		if (s[i] == (char)c)
+			return (&s[i]);
+	if ((char)c == '\0')
+		return (&s[i]);
+	return (0);
+}
