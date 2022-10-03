@@ -1,24 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vfries <vfries@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/07 19:22:16 by vfries            #+#    #+#             */
-/*   Updated: 2022/10/03 18:08:14 by vfries           ###   ########lyon.fr   */
+/*   Created: 2022/10/03 17:59:02 by vfries            #+#    #+#             */
+/*   Updated: 2022/10/03 18:19:38 by vfries           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
-
-int		ft_isalpha(int c);
-int		ft_toupper(int c);
-int		ft_isdigit(int c);
-int		ft_tolower(int c);
-int		ft_isalnum(int c);
-char	*ft_strchr(char *s, int c);
-int		ft_isprint(int c);
-
-#endif
+int	ft_isprint(int c)
+{
+	if (c < 32 || c >= 127)
+		return (0);
+	return (1);
+}

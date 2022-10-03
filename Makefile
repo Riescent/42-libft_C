@@ -6,7 +6,7 @@
 #    By: vfries <vfries@student.42lyon.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/07 19:13:43 by vfries            #+#    #+#              #
-#    Updated: 2022/09/14 14:13:38 by vfries           ###   ########lyon.fr    #
+#    Updated: 2022/10/03 18:06:38 by vfries           ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,11 +16,12 @@ SRCS =	ft_isalpha.c \
 		ft_isdigit.c \
 		ft_tolower.c \
 		ft_isalnum.c \
-		ft_strchr.c
+		ft_strchr.c  \
+		ft_isprint.c
 OBJS =	${SRCS:.c=.o}
 FLAG =	-Wall -Wextra -Werror
 
-.PHONY: .c.o ${NAME} clean fclean
+.PHONY:		.c.o ${NAME} clean fclean
 
 .c.o:
 			gcc ${FLAG} -c $< -o ${<:.c=.o}
