@@ -6,19 +6,19 @@
 /*   By: vfries <vfries@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/14 14:14:18 by vfries            #+#    #+#             */
-/*   Updated: 2022/09/14 19:47:01 by vfries           ###   ########lyon.fr   */
+/*   Updated: 2022/10/09 12:51:54 by vfries           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strchr(char *s, int c)
+char	*ft_strchr(const char *s, int c)
 {
 	int	i;
 
 	i = -1;
 	while (s[++i])
 		if (s[i] == (char)c)
-			return (&s[i]);
+			return ((char *)&s[i]);
 	if ((char)c == '\0')
-		return (&s[i]);
+		return ((char *)&s[i]);
 	return (0);
 }
