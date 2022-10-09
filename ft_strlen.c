@@ -6,16 +6,18 @@
 /*   By: vfries <vfries@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 12:44:46 by vfries            #+#    #+#             */
-/*   Updated: 2022/10/09 12:46:27 by vfries           ###   ########lyon.fr   */
+/*   Updated: 2022/10/09 17:54:22 by vfries           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-unsigned int	ft_strlen(const char *str)
-{
-	unsigned int	i;
+#include <stdlib.h>
 
-	i = -1;
-	while (str[++i])
-		;
+size_t	ft_strlen(const char *str)
+{
+	size_t	i;
+
+	i = 0;
+	while (str[i])
+		i++;
 	return (i);
 }

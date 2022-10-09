@@ -6,11 +6,13 @@
 /*   By: vfries <vfries@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 14:09:47 by vfries            #+#    #+#             */
-/*   Updated: 2022/10/09 14:31:58 by vfries           ###   ########lyon.fr   */
+/*   Updated: 2022/10/09 17:52:41 by vfries           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memset(void *b, int c, unsigned int len)
+#include <stdlib.h>
+
+void	*ft_memset(void *b, int c, size_t len)
 {
 	char	*ptr;
 

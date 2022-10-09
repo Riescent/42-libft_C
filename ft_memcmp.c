@@ -6,11 +6,13 @@
 /*   By: vfries <vfries@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 14:35:17 by vfries            #+#    #+#             */
-/*   Updated: 2022/10/09 15:48:12 by vfries           ###   ########lyon.fr   */
+/*   Updated: 2022/10/09 17:53:31 by vfries           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_memcmp(const void *s1, const void *s2, unsigned int n)
+#include <stdlib.h>
+
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
 	while (n > 0)
 	{

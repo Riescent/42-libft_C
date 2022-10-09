@@ -6,11 +6,13 @@
 /*   By: vfries <vfries@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 18:53:28 by vfries            #+#    #+#             */
-/*   Updated: 2022/10/09 14:42:53 by vfries           ###   ########lyon.fr   */
+/*   Updated: 2022/10/09 17:49:28 by vfries           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strncmp(const char *s1, const char *s2, unsigned int n)
+#include <stdlib.h>
+
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	while (n > 0)
 	{
