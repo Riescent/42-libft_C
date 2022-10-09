@@ -6,7 +6,7 @@
 /*   By: vfries <vfries@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/07 19:22:16 by vfries            #+#    #+#             */
-/*   Updated: 2022/10/09 12:56:16 by vfries           ###   ########lyon.fr   */
+/*   Updated: 2022/10/09 13:05:12 by vfries           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int				ft_tolower(int c);
 int				ft_isalnum(int c);
 char			*ft_strchr(const char *s, int c);
 int				ft_isprint(int c);
-int				ft_strncmp(const char *str_1, const char *str_2, unsigned int n);
+int				ft_strncmp(const char *s1, const char *s2, unsigned int n);
 unsigned int	ft_strlen(const char *str);
 
 #endif
