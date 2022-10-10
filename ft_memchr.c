@@ -6,7 +6,7 @@
 /*   By: vfries <vfries@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 13:22:03 by vfries            #+#    #+#             */
-/*   Updated: 2022/10/09 21:54:55 by vfries           ###   ########lyon.fr   */
+/*   Updated: 2022/10/10 12:38:10 by vfries           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,5 @@ void	*ft_memchr(const void *s, int c, size_t n)
 		s++;
 		n--;
 	}
-	return (0);
+	return (NULL);
 }
