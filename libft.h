@@ -6,7 +6,7 @@
 /*   By: vfries <vfries@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/07 19:22:16 by vfries            #+#    #+#             */
-/*   Updated: 2022/10/10 19:08:41 by vfries           ###   ########lyon.fr   */
+/*   Updated: 2022/10/10 23:02:23 by vfries           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,6 @@ void	*ft_memcpy(void *restrict dst, const void *restrict src, size_t n);
 int		ft_atoi(const char *str);
 int		ft_isascii(int c);
 void	*ft_memmove(void *dst, const void *src, size_t len);
+size_t	ft_strlcat(char *restrict dst, const char *restrict src, size_t size);
 
 #endif
