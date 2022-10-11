@@ -6,7 +6,7 @@
 #    By: vfries <vfries@student.42lyon.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/07 19:13:43 by vfries            #+#    #+#              #
-#    Updated: 2022/10/11 13:41:28 by vfries           ###   ########lyon.fr    #
+#    Updated: 2022/10/11 14:03:35 by vfries           ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +30,8 @@ SRCS =	ft_isalpha.c	\
 		ft_isascii.c	\
 		ft_memmove.c	\
 		ft_strlcat.c	\
-		ft_strlcpy.c
+		ft_strlcpy.c	\
+		ft_strrchr.c
 OBJS =	${SRCS:.c=.o}
 FLAG =	-Wall -Wextra -Werror
 
