@@ -6,7 +6,7 @@
 /*   By: vfries <vfries@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 20:23:46 by vfries            #+#    #+#             */
-/*   Updated: 2022/10/13 22:27:59 by vfries           ###   ########lyon.fr   */
+/*   Updated: 2022/10/14 00:04:37 by vfries           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,5 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 
 	i = 0;
 	while (*s)
-	{
 		f(i++, s++);
-	}
 }
