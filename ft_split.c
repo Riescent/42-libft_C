@@ -6,34 +6,27 @@
 /*   By: vfries <vfries@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 00:38:05 by vfries            #+#    #+#             */
-/*   Updated: 2022/10/12 18:09:51 by vfries           ###   ########lyon.fr   */
+/*   Updated: 2022/10/14 00:01:04 by vfries           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 #include <stdlib.h>
 
-static size_t	ft_get_result_size(const char *s, char c)
+static size_t	ft_get_len(const char *s, char c)
 {
-	size_t	size;
+	size_t	len;
 
-	while (*s && *s == c)
-		s++;
-	if (*s == '\0')
-		return (0);
-	size = 1;
+	len = 0;
 	while (*s)
 	{
-		if (*s == c)
-			size++;
-		while (*s && *s == c)
+		if (*s != c)
+			len++;
+		while (*s && *s != c)
 			s++;
 		if (*s)
 			s++;
-		else
-			size--;
 	}
-	return (size);
+	return (len);
 }
 
 static char	**ft_free_result(char **result, size_t i)
@@ -44,42 +37,42 @@ static char	**ft_free_result(char **result, size_t i)
 	return (NULL);
 }
 
-static size_t	ft_get_start(const char *s, char c, size_t end)
+static char	*ft_strldup(const char *restrict s, size_t len)
 {
-	while (s[end] && s[end] == c)
-		end++;
-	return (end);
-}
+	char	*result;
+	size_t	i;
 
-static size_t	ft_get_end(const char *s, char c, size_t start)
-{
-	while (s[start] && s[start] != c)
-		start++;
-	return (start);
+	result = malloc(sizeof(char) * (len + 1));
+	if (result == NULL)
+		return (NULL);
+	i = 0;
+	while (*s && i < len)
+		result[i++] = *s++;
+	result[i] = '\0';
+	return (result);
 }
 
 char	**ft_split(char const *s, char c)
 {
+	size_t	len;
 	char	**result;
-	size_t	start;
-	size_t	end;
 	size_t	i;
-	size_t	result_size;
+	size_t	end;
 
-	result_size = ft_get_result_size(s, c);
-	result = malloc(sizeof(char *) * (result_size + 1));
-	if (result == NULL)
-		return (NULL);
-	end = 0;
+	len = ft_get_len(s, c);
+	result = malloc(sizeof(char *) * (len + 1));
 	i = 0;
-	while (i < result_size)
+	while (i < len)
 	{
-		start = ft_get_start(s, c, end);
-		end = ft_get_end(s, c, start);
-		result[i] = malloc(sizeof(char) * (end - start + 1));
+		while (*s && *s == c)
+			s++;
+		end = 0;
+		while (s[end] && s[end] != c)
+			end++;
+		result[i] = ft_strldup(s, end);
 		if (result[i] == NULL)
 			return (ft_free_result(result, i));
-		ft_strlcpy(result[i], s + start, end - start + 1);
+		s += end;
 		i++;
 	}
 	result[i] = NULL;
