@@ -6,7 +6,7 @@
 #    By: vfries <vfries@student.42lyon.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/07 19:13:43 by vfries            #+#    #+#              #
-#    Updated: 2022/10/13 15:34:37 by vfries           ###   ########lyon.fr    #
+#    Updated: 2022/10/13 15:38:59 by vfries           ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,7 +47,8 @@ SRCS =			ft_isalpha.c	\
 				ft_putnbr_fd.c
 OBJS =			${SRCS:.c=.o}
 SRCS_BONUS =	ft_lstnew_bonus.c		\
-				ft_lstadd_front_bonus.c
+				ft_lstadd_front_bonus.c	\
+				ft_lstsize_bonus.c
 OBJS_BONUS =	${SRCS_BONUS:.c=.o}
 FLAG =			-Wall -Wextra -Werror
 
