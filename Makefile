@@ -6,7 +6,7 @@
 #    By: vfries <vfries@student.42lyon.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/07 19:13:43 by vfries            #+#    #+#              #
-#    Updated: 2022/10/13 15:47:26 by vfries           ###   ########lyon.fr    #
+#    Updated: 2022/10/13 15:50:59 by vfries           ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -51,7 +51,8 @@ SRCS_BONUS =	ft_lstnew_bonus.c		\
 				ft_lstsize_bonus.c		\
 				ft_lstlast_bonus.c		\
 				ft_lstadd_back_bonus.c	\
-				ft_lstdelone_bonus.c
+				ft_lstdelone_bonus.c	\
+				ft_lstclear_bonus.c
 OBJS_BONUS =	${SRCS_BONUS:.c=.o}
 FLAG =			-Wall -Wextra -Werror
 
