@@ -6,12 +6,11 @@
 /*   By: vfries <vfries@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 14:09:07 by vfries            #+#    #+#             */
-/*   Updated: 2022/10/13 21:58:47 by vfries           ###   ########lyon.fr   */
+/*   Updated: 2022/10/13 22:23:19 by vfries           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include <sys/errno.h>
 
 void	*ft_calloc(size_t count, size_t size)
 {
