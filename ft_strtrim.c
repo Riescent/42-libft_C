@@ -6,7 +6,7 @@
 /*   By: vfries <vfries@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 23:45:16 by vfries            #+#    #+#             */
-/*   Updated: 2022/10/12 00:16:59 by vfries           ###   ########lyon.fr   */
+/*   Updated: 2022/10/14 00:13:27 by vfries           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	while (*s1 && ft_strchr(set, *s1))
 		s1++;
 	if (*s1 == '\0')
-		return (calloc(1, sizeof(char)));
+		return (ft_calloc(1, sizeof(char)));
 	start_s1 = s1;
 	while (*s1)
 		s1++;
@@ -33,9 +33,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	if (result == NULL)
 		return (NULL);
 	start_result = result;
-	while (start_s1 < s1)
+	while (start_s1 <= s1)
 		*result++ = *start_s1++;
-	*result = *start_s1;
-	*++result = '\0';
+	*result = '\0';
 	return (start_result);
 }
