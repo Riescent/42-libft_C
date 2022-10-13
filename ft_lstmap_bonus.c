@@ -6,11 +6,12 @@
 /*   By: vfries <vfries@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 16:06:15 by vfries            #+#    #+#             */
-/*   Updated: 2022/10/13 21:44:09 by vfries           ###   ########lyon.fr   */
+/*   Updated: 2022/10/13 22:25:31 by vfries           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
 static void	ft_lst_reverse(t_list **lst)
 {

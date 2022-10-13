@@ -6,11 +6,9 @@
 /*   By: vfries <vfries@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 20:23:46 by vfries            #+#    #+#             */
-/*   Updated: 2022/10/12 20:30:42 by vfries           ###   ########lyon.fr   */
+/*   Updated: 2022/10/13 22:27:59 by vfries           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stdlib.h>
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {

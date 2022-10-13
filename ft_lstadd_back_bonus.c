@@ -6,11 +6,12 @@
 /*   By: vfries <vfries@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 15:44:07 by vfries            #+#    #+#             */
-/*   Updated: 2022/10/13 15:46:10 by vfries           ###   ########lyon.fr   */
+/*   Updated: 2022/10/13 22:24:41 by vfries           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
