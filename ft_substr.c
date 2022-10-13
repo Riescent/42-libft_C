@@ -6,7 +6,7 @@
 /*   By: vfries <vfries@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 17:07:00 by vfries            #+#    #+#             */
-/*   Updated: 2022/10/13 22:30:47 by vfries           ###   ########lyon.fr   */
+/*   Updated: 2022/10/14 00:20:45 by vfries           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 	size = 0;
 	s += start;
-	while (s[size] && len)
-	{
+	while (s[size] && size < len)
 		size++;
-		len--;
-	}
 	result = malloc(sizeof(char) * size + 1);
 	if (result == NULL)
 		return (NULL);
