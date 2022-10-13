@@ -6,7 +6,7 @@
 /*   By: vfries <vfries@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 14:09:07 by vfries            #+#    #+#             */
-/*   Updated: 2022/10/11 16:46:38 by vfries           ###   ########lyon.fr   */
+/*   Updated: 2022/10/13 21:58:47 by vfries           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,7 @@ void	*ft_calloc(size_t count, size_t size)
 	total_size = count * size;
 	result = malloc(total_size);
 	if (result == NULL)
-	{
-		errno = ENOMEM;
 		return (NULL);
-	}
 	i = 0;
 	while (i < total_size)
 		result[i++] = 0;
