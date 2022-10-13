@@ -6,7 +6,7 @@
 #    By: vfries <vfries@student.42lyon.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/07 19:13:43 by vfries            #+#    #+#              #
-#    Updated: 2022/10/13 16:04:37 by vfries           ###   ########lyon.fr    #
+#    Updated: 2022/10/14 00:21:37 by vfries           ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -58,7 +58,7 @@ SRCS_BONUS =	ft_lstnew_bonus.c		\
 OBJS_BONUS =	${SRCS_BONUS:.c=.o}
 FLAG =			-Wall -Wextra -Werror
 
-.PHONY:		.c.o ${NAME} clean fclean #bonus
+.PHONY:		.c.o ${NAME} clean fclean bonus
 
 .c.o:
 			gcc ${FLAG} -c $< -o ${<:.c=.o}
