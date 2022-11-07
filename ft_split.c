@@ -6,7 +6,7 @@
 /*   By: vfries <vfries@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 00:38:05 by vfries            #+#    #+#             */
-/*   Updated: 2022/11/07 15:02:28 by vfries           ###   ########lyon.fr   */
+/*   Updated: 2022/11/07 18:04:59 by vfries           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,8 @@ char	**ft_split(char const *s, char c)
 
 	len = ft_get_len(s, c);
 	result = malloc(sizeof(char *) * (len + 1));
+	if (!result)
+		return (NULL);
 	i = 0;
 	while (i < len)
 	{
