@@ -6,13 +6,13 @@
 /*   By: vfries <vfries@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 13:49:27 by vfries            #+#    #+#             */
-/*   Updated: 2022/10/10 14:18:52 by vfries           ###   ########lyon.fr   */
+/*   Updated: 2022/11/07 23:08:03 by vfries           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-void	*ft_memcpy(void *restrict dst, const void *restrict src, size_t n)
+void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
 	void	*original_dst;
 

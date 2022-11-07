@@ -6,13 +6,13 @@
 /*   By: vfries <vfries@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 13:36:26 by vfries            #+#    #+#             */
-/*   Updated: 2022/11/07 13:45:27 by vfries           ###   ########lyon.fr   */
+/*   Updated: 2022/11/07 23:08:44 by vfries           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-size_t	ft_strlcpy(char *restrict dst, const char *restrict src, size_t size)
+size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
 	size_t	src_len;
 
