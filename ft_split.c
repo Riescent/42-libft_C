@@ -6,10 +6,11 @@
 /*   By: vfries <vfries@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 00:38:05 by vfries            #+#    #+#             */
-/*   Updated: 2022/10/14 00:01:04 by vfries           ###   ########lyon.fr   */
+/*   Updated: 2022/11/07 15:02:28 by vfries           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include <stdlib.h>
 
 static size_t	ft_get_len(const char *s, char c)
@@ -37,21 +38,6 @@ static char	**ft_free_result(char **result, size_t i)
 	return (NULL);
 }
 
-static char	*ft_strldup(const char *restrict s, size_t len)
-{
-	char	*result;
-	size_t	i;
-
-	result = malloc(sizeof(char) * (len + 1));
-	if (result == NULL)
-		return (NULL);
-	i = 0;
-	while (*s && i < len)
-		result[i++] = *s++;
-	result[i] = '\0';
-	return (result);
-}
-
 char	**ft_split(char const *s, char c)
 {
 	size_t	len;
@@ -69,7 +55,7 @@ char	**ft_split(char const *s, char c)
 		end = 0;
 		while (s[end] && s[end] != c)
 			end++;
-		result[i] = ft_strldup(s, end);
+		result[i] = ft_substr(s, 0, end);
 		if (result[i] == NULL)
 			return (ft_free_result(result, i));
 		s += end;
