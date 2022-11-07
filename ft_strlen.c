@@ -6,7 +6,7 @@
 /*   By: vfries <vfries@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 12:44:46 by vfries            #+#    #+#             */
-/*   Updated: 2022/10/09 17:54:22 by vfries           ###   ########lyon.fr   */
+/*   Updated: 2022/11/06 16:23:11 by vfries           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 size_t	ft_strlen(const char *str)
 {
-	size_t	i;
+	const char	*str_start;
 
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
+	str_start = str;
+	while (*str)
+		str++;
+	return (str - str_start);
 }
