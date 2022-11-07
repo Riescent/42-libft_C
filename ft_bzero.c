@@ -6,7 +6,7 @@
 /*   By: vfries <vfries@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 15:59:28 by vfries            #+#    #+#             */
-/*   Updated: 2022/10/09 18:46:22 by vfries           ###   ########lyon.fr   */
+/*   Updated: 2022/11/07 18:18:56 by vfries           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,6 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	while (n > 0)
-	{
+	while (n-- > 0)
 		*(unsigned char *)s++ = 0;
-		n--;
-	}
 }
