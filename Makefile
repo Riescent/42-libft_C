@@ -6,11 +6,12 @@
 #    By: vfries <vfries@student.42lyon.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/07 19:13:43 by vfries            #+#    #+#              #
-#    Updated: 2022/11/07 21:45:12 by vfries           ###   ########lyon.fr    #
+#    Updated: 2022/11/07 22:06:38 by vfries           ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
 NAME =			libft.a
+
 SRCS =			ft_isalpha.c	\
 				ft_toupper.c	\
 				ft_isdigit.c	\
@@ -45,7 +46,9 @@ SRCS =			ft_isalpha.c	\
 				ft_putstr_fd.c	\
 				ft_putendl_fd.c	\
 				ft_putnbr_fd.c
+
 OBJS =			${SRCS:.c=.o}
+
 SRCS_BONUS =	ft_lstnew_bonus.c		\
 				ft_lstadd_front_bonus.c	\
 				ft_lstsize_bonus.c		\
@@ -55,13 +58,16 @@ SRCS_BONUS =	ft_lstnew_bonus.c		\
 				ft_lstclear_bonus.c		\
 				ft_lstiter_bonus.c		\
 				ft_lstmap_bonus.c
+
 OBJS_BONUS =	${SRCS_BONUS:.c=.o}
+
 FLAG =			-Wall -Wextra -Werror
 
-.PHONY:		.c.o ${NAME} clean fclean bonus
+HEADERS = 		libft.h
 
-.c.o:
-			cc ${FLAG} -c $< -o ${<:.c=.o}
+.PHONY:		${OBJS} ${OBJS_BONUS} ${NAME} clean fclean bonus
+
+all:		${NAME}
 
 $(NAME):	${OBJS}
 			ar rcs ${NAME} ${OBJS}
@@ -69,10 +75,11 @@ $(NAME):	${OBJS}
 bonus:		${OBJS} ${OBJS_BONUS}
 			ar rcs ${NAME} ${OBJS} ${OBJS_BONUS}
 
-all:		${NAME}
+%.o:		%.c ${HEADERS} Makefile
+			cc ${FLAG} -c $< -o $@
 
 clean:
-			rm -f ${OBJS} ${OBJS_BONUS}
+			rm -f ${OBJS} ${OBJS_BONUS}kkk
 
 fclean:		clean
 			rm -f ${NAME}
