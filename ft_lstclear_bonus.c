@@ -6,7 +6,7 @@
 /*   By: vfries <vfries@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 15:51:32 by vfries            #+#    #+#             */
-/*   Updated: 2022/10/13 16:01:49 by vfries           ###   ########lyon.fr   */
+/*   Updated: 2022/11/07 18:40:54 by vfries           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,19 +15,16 @@
 
 void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	t_list	*next;
+	t_list	*cursor;
+	t_list	*delete_me;
 
-	if (*lst == NULL)
-		return ;
-	next = (*lst)->next;
-	while (next)
+	cursor = *lst;
+	while (cursor)
 	{
-		del((*lst)->content);
-		free(*lst);
-		*lst = next;
-		next = next->next;
+		delete_me = cursor;
+		cursor = cursor->next;
+		del(delete_me->content);
+		free(delete_me);
 	}
-	del((*lst)->content);
-	free(*lst);
 	*lst = NULL;
 }

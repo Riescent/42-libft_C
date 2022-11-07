@@ -6,7 +6,7 @@
 /*   By: vfries <vfries@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 15:44:07 by vfries            #+#    #+#             */
-/*   Updated: 2022/10/13 22:24:41 by vfries           ###   ########lyon.fr   */
+/*   Updated: 2022/11/07 18:36:40 by vfries           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,10 @@
 
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	t_list	*current;
-
 	if (*lst == NULL)
 	{
 		*lst = new;
 		return ;
 	}
-	current = *lst;
-	while (current->next)
-		current = current->next;
-	current->next = new;
+	ft_lstlast(*lst)->next = new;
 }

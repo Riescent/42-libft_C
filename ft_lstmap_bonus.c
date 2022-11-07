@@ -6,7 +6,7 @@
 /*   By: vfries <vfries@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 16:06:15 by vfries            #+#    #+#             */
-/*   Updated: 2022/10/13 22:25:31 by vfries           ###   ########lyon.fr   */
+/*   Updated: 2022/11/07 18:42:42 by vfries           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,6 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	t_list	*new_list;
 	t_list	*new_elem;
 
-	if (lst == NULL)
-		return (NULL);
 	new_list = NULL;
 	while (lst)
 	{
