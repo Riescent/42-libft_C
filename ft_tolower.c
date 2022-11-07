@@ -6,13 +6,13 @@
 /*   By: vfries <vfries@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/07 20:21:27 by vfries            #+#    #+#             */
-/*   Updated: 2022/09/07 20:22:09 by vfries           ###   ########lyon.fr   */
+/*   Updated: 2022/11/07 19:41:09 by vfries           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_tolower(int c)
 {
 	if (c >= 'A' && c <= 'Z')
-		return (c + 32);
+		return (c - 'A' + 'a');
 	return (c);
 }
