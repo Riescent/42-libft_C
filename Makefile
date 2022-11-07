@@ -6,7 +6,7 @@
 #    By: vfries <vfries@student.42lyon.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/07 19:13:43 by vfries            #+#    #+#              #
-#    Updated: 2022/10/14 00:21:37 by vfries           ###   ########lyon.fr    #
+#    Updated: 2022/11/07 21:45:12 by vfries           ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -61,7 +61,7 @@ FLAG =			-Wall -Wextra -Werror
 .PHONY:		.c.o ${NAME} clean fclean bonus
 
 .c.o:
-			gcc ${FLAG} -c $< -o ${<:.c=.o}
+			cc ${FLAG} -c $< -o ${<:.c=.o}
 
 $(NAME):	${OBJS}
 			ar rcs ${NAME} ${OBJS}
@@ -77,6 +77,8 @@ clean:
 fclean:		clean
 			rm -f ${NAME}
 
-re:			fclean all
+re:			fclean
+			${MAKE} all
 
-re_bonus:	fclean bonus
+re_bonus:	fclean
+			${MAKE} bonus
