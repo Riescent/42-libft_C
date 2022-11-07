@@ -6,13 +6,11 @@
 /*   By: vfries <vfries@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 17:59:02 by vfries            #+#    #+#             */
-/*   Updated: 2022/10/13 22:00:35 by vfries           ###   ########lyon.fr   */
+/*   Updated: 2022/11/07 18:29:56 by vfries           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isprint(int c)
 {
-	if (c < ' ' || c > '~')
-		return (0);
-	return (1);
+	return (' ' <= c && c <= '~');
 }
