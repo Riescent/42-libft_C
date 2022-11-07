@@ -6,7 +6,7 @@
 /*   By: vfries <vfries@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 14:23:46 by vfries            #+#    #+#             */
-/*   Updated: 2022/10/10 14:56:25 by vfries           ###   ########lyon.fr   */
+/*   Updated: 2022/11/07 18:17:43 by vfries           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,8 @@ int	ft_atoi(const char *str)
 	while (*str == '\t' || *str == '\n' || *str == '\v' || *str == '\f'
 		|| *str == '\r' || *str == ' ')
 		str++;
-	is_negative = 0;
-	if (*str == '-')
-	{
-		is_negative = 1;
-		str++;
-	}
-	else if (*str == '+')
+	is_negative = *str == '-';
+	if (*str == '+' || *str == '-')
 		str++;
 	result = 0;
 	while (*str >= '0' && *str <= '9')
