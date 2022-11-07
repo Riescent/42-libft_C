@@ -6,7 +6,7 @@
 #    By: vfries <vfries@student.42lyon.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/07 19:13:43 by vfries            #+#    #+#              #
-#    Updated: 2022/11/07 22:06:38 by vfries           ###   ########lyon.fr    #
+#    Updated: 2022/11/07 22:23:53 by vfries           ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -65,7 +65,7 @@ FLAG =			-Wall -Wextra -Werror
 
 HEADERS = 		libft.h
 
-.PHONY:		${OBJS} ${OBJS_BONUS} ${NAME} clean fclean bonus
+.PHONY:		all bonus clean fclean re re_bonus
 
 all:		${NAME}
 
@@ -79,7 +79,7 @@ bonus:		${OBJS} ${OBJS_BONUS}
 			cc ${FLAG} -c $< -o $@
 
 clean:
-			rm -f ${OBJS} ${OBJS_BONUS}kkk
+			rm -f ${OBJS} ${OBJS_BONUS}
 
 fclean:		clean
 			rm -f ${NAME}
