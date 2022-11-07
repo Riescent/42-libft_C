@@ -6,7 +6,7 @@
 /*   By: vfries <vfries@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 16:43:45 by vfries            #+#    #+#             */
-/*   Updated: 2022/10/13 22:32:06 by vfries           ###   ########lyon.fr   */
+/*   Updated: 2022/11/07 19:25:19 by vfries           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,12 @@
 char	*ft_strdup(const char *s1)
 {
 	char	*new_str;
-	char	*new_str_start;
+	size_t	result_size;
 
-	new_str = malloc(sizeof(char) * (ft_strlen(s1) + 1));
+	result_size = ft_strlen(s1) + 1;
+	new_str = malloc(sizeof(char) * result_size);
 	if (new_str == NULL)
 		return (NULL);
-	new_str_start = new_str;
-	while (*s1)
-		*new_str++ = *s1++;
-	*new_str = '\0';
-	return (new_str_start);
+	ft_strlcpy(new_str, s1, result_size);
+	return (new_str);
 }
