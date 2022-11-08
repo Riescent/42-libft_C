@@ -6,7 +6,7 @@
 /*   By: vfries <vfries@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 17:07:00 by vfries            #+#    #+#             */
-/*   Updated: 2022/11/08 01:01:55 by vfries           ###   ########lyon.fr   */
+/*   Updated: 2022/11/08 15:07:15 by vfries           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	while (s[result_size] && result_size < len)
 		result_size++;
 	result = malloc(sizeof(char) * ++result_size);
-	if (result == NULL)
-		return (NULL);
-	ft_strlcpy(result, s, result_size);
+	if (result != NULL)
+		ft_strlcpy(result, s, result_size);
 	return (result);
 }

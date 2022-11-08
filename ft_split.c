@@ -6,28 +6,28 @@
 /*   By: vfries <vfries@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 00:38:05 by vfries            #+#    #+#             */
-/*   Updated: 2022/11/08 00:40:59 by vfries           ###   ########lyon.fr   */
+/*   Updated: 2022/11/08 15:06:54 by vfries           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
-static size_t	ft_get_len(const char *s, char c)
+static size_t	ft_get_word_count(const char *s, char c)
 {
-	size_t	len;
+	size_t	word_count;
 
-	len = 0;
+	word_count = 0;
 	while (*s)
 	{
 		if (*s != c)
-			len++;
+			word_count++;
 		while (*s && *s != c)
 			s++;
 		if (*s)
 			s++;
 	}
-	return (len);
+	return (word_count);
 }
 
 static char	**ft_free_result(char **result, size_t i)
@@ -57,19 +57,19 @@ size_t	get_end(char const *s, char c)
 
 char	**ft_split(char const *s, char c)
 {
-	size_t	len;
+	size_t	word_count;
 	char	**result;
 	size_t	i;
 	size_t	end;
 
 	if (s == NULL)
 		return (NULL);
-	len = ft_get_len(s, c);
-	result = malloc(sizeof(char *) * (len + 1));
+	word_count = ft_get_word_count(s, c);
+	result = malloc(sizeof(char *) * (word_count + 1));
 	if (!result)
 		return (NULL);
 	i = 0;
-	while (i < len)
+	while (i < word_count)
 	{
 		s = skip_c(s, c);
 		end = get_end(s, c);
