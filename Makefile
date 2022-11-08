@@ -6,7 +6,7 @@
 #    By: vfries <vfries@student.42lyon.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/07 19:13:43 by vfries            #+#    #+#              #
-#    Updated: 2022/11/08 20:35:44 by vfries           ###   ########lyon.fr    #
+#    Updated: 2022/11/08 20:42:40 by vfries           ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,12 +49,12 @@ SRCS =			ft_isalpha.c	\
 
 OBJS =			${SRCS:.c=.o}
 
-SRCS_BONUS =	ft_lstnew.c		\
+SRCS_BONUS =	ft_lstnew.c			\
 				ft_lstadd_front.c	\
 				ft_lstsize.c		\
 				ft_lstlast.c		\
 				ft_lstadd_back.c	\
-				ft_lstdelone.c	\
+				ft_lstdelone.c		\
 				ft_lstclear.c		\
 				ft_lstiter.c		\
 				ft_lstmap.c
