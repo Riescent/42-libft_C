@@ -6,7 +6,7 @@
 /*   By: vfries <vfries@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 00:38:05 by vfries            #+#    #+#             */
-/*   Updated: 2022/11/08 15:06:54 by vfries           ###   ########lyon.fr   */
+/*   Updated: 2022/11/08 20:12:38 by vfries           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,14 +38,14 @@ static char	**ft_free_result(char **result, size_t i)
 	return (NULL);
 }
 
-char const	*skip_c(char const *s, char c)
+static char const	*skip_c(char const *s, char c)
 {
 	while (*s && *s == c)
 		s++;
 	return (s);
 }
 
-size_t	get_end(char const *s, char c)
+static size_t	get_end(char const *s, char c)
 {
 	size_t	end;
 
