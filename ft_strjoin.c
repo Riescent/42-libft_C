@@ -6,7 +6,7 @@
 /*   By: vfries <vfries@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 17:21:43 by vfries            #+#    #+#             */
-/*   Updated: 2022/11/08 00:40:24 by vfries           ###   ########lyon.fr   */
+/*   Updated: 2022/11/08 01:56:43 by vfries           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,6 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	if (result == NULL)
 		return (NULL);
 	ft_strlcpy(result, s1, result_size);
-	ft_strlcpy(result + len_s1, s2, result_size);
+	ft_strlcpy(result + len_s1, s2, result_size - len_s1);
 	return (result);
 }
