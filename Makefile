@@ -6,7 +6,7 @@
 #    By: vfries <vfries@student.42lyon.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/07 19:13:43 by vfries            #+#    #+#              #
-#    Updated: 2022/11/08 20:42:40 by vfries           ###   ########lyon.fr    #
+#    Updated: 2022/11/08 22:14:02 by vfries           ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -76,7 +76,7 @@ bonus:		${OBJS} ${OBJS_BONUS}
 			ar rcs ${NAME} ${OBJS} ${OBJS_BONUS}
 
 %.o:		%.c ${HEADERS} Makefile
-			cc ${FLAG} -c $< -o $@
+			cc ${FLAG} -I ${HEADERS} -c $< -o $@
 
 clean:
 			rm -f ${OBJS} ${OBJS_BONUS}
