@@ -6,7 +6,7 @@
 /*   By: vfries <vfries@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 23:45:16 by vfries            #+#    #+#             */
-/*   Updated: 2022/11/07 14:57:57 by vfries           ###   ########lyon.fr   */
+/*   Updated: 2022/11/08 00:25:13 by vfries           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,10 @@ char	*ft_strtrim(char const *s1, char const *set)
 {
 	const char	*start_s1;
 
+	if (s1 == NULL)
+		return (NULL);
+	if (set == NULL)
+		return (ft_strdup(s1));
 	while (*s1 && ft_strchr(set, *s1))
 		s1++;
 	if (*s1 == '\0')

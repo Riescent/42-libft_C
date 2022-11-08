@@ -6,7 +6,7 @@
 /*   By: vfries <vfries@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 00:38:05 by vfries            #+#    #+#             */
-/*   Updated: 2022/11/07 18:04:59 by vfries           ###   ########lyon.fr   */
+/*   Updated: 2022/11/08 00:40:59 by vfries           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,23 @@ static char	**ft_free_result(char **result, size_t i)
 	return (NULL);
 }
 
+char const	*skip_c(char const *s, char c)
+{
+	while (*s && *s == c)
+		s++;
+	return (s);
+}
+
+size_t	get_end(char const *s, char c)
+{
+	size_t	end;
+
+	end = 0;
+	while (s[end] && s[end] != c)
+		end++;
+	return (end);
+}
+
 char	**ft_split(char const *s, char c)
 {
 	size_t	len;
@@ -45,6 +62,8 @@ char	**ft_split(char const *s, char c)
 	size_t	i;
 	size_t	end;
 
+	if (s == NULL)
+		return (NULL);
 	len = ft_get_len(s, c);
 	result = malloc(sizeof(char *) * (len + 1));
 	if (!result)
@@ -52,11 +71,8 @@ char	**ft_split(char const *s, char c)
 	i = 0;
 	while (i < len)
 	{
-		while (*s && *s == c)
-			s++;
-		end = 0;
-		while (s[end] && s[end] != c)
-			end++;
+		s = skip_c(s, c);
+		end = get_end(s, c);
 		result[i] = ft_substr(s, 0, end);
 		if (result[i] == NULL)
 			return (ft_free_result(result, i));
