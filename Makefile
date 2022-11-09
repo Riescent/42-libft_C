@@ -6,7 +6,7 @@
 #    By: vfries <vfries@student.42lyon.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/07 19:13:43 by vfries            #+#    #+#              #
-#    Updated: 2022/11/08 23:05:31 by vfries           ###   ########lyon.fr    #
+#    Updated: 2022/11/09 17:57:15 by vfries           ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -63,7 +63,7 @@ OBJS_BONUS =	${SRCS_BONUS:.c=.o}
 
 FLAG =			-Wall -Wextra -Werror
 
-HEADERS = 		.
+HEADERS = 		libft.h
 
 .PHONY:		all bonus clean fclean re re_bonus
 
