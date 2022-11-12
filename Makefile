@@ -6,7 +6,7 @@
 #    By: vfries <vfries@student.42lyon.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/07 19:13:43 by vfries            #+#    #+#              #
-#    Updated: 2022/11/12 19:53:36 by vfries           ###   ########lyon.fr    #
+#    Updated: 2022/11/12 21:23:40 by vfries           ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -55,7 +55,9 @@ SRCS =			ft_isalpha.c	\
 				ft_lstdelone_bonus.c	\
 				ft_lstclear_bonus.c		\
 				ft_lstiter_bonus.c		\
-				ft_lstmap_bonus.c
+				ft_lstmap_bonus.c		\
+\
+				ft_lst_reverse_bonus.c
 
 DIR_OBJS = 		./.objs/
 
@@ -89,3 +91,6 @@ fclean:			clean
 
 re:				fclean
 				${MAKE} all
+
+echo_objs:
+				@echo ${OBJS}
