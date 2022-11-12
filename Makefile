@@ -6,7 +6,7 @@
 #    By: vfries <vfries@student.42lyon.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/07 19:13:43 by vfries            #+#    #+#              #
-#    Updated: 2022/11/09 22:30:18 by vfries           ###   ########lyon.fr    #
+#    Updated: 2022/11/12 19:53:36 by vfries           ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,11 +45,9 @@ SRCS =			ft_isalpha.c	\
 				ft_putchar_fd.c	\
 				ft_putstr_fd.c	\
 				ft_putendl_fd.c	\
-				ft_putnbr_fd.c
-
-OBJS =			${SRCS:.c=.o}
-
-SRCS_BONUS =	ft_lstnew_bonus.c		\
+				ft_putnbr_fd.c	\
+\
+				ft_lstnew_bonus.c		\
 				ft_lstadd_front_bonus.c	\
 				ft_lstsize_bonus.c		\
 				ft_lstlast_bonus.c		\
@@ -59,33 +57,35 @@ SRCS_BONUS =	ft_lstnew_bonus.c		\
 				ft_lstiter_bonus.c		\
 				ft_lstmap_bonus.c
 
-OBJS_BONUS =	${SRCS_BONUS:.c=.o}
+DIR_OBJS = 		./.objs/
+
+OBJS =			${addprefix ${DIR_OBJS},${SRCS:.c=.o}}
 
 FLAG =			-Wall -Wextra -Werror
 
+RMF =	 		rm -f
+
 HEADERS = 		libft.h
 
-.PHONY:		all bonus clean fclean re re_bonus
+.PHONY:			all clean fclean re
 
-all:		${NAME}
+all:			${DIR_OBJS}
+				@${MAKE} -j ${NAME}
 
-$(NAME):	${OBJS}
-			ar rcs ${NAME} ${OBJS}
+$(NAME):		${OBJS}
+				ar rcs ${NAME} ${OBJS}
 
-bonus:		${OBJS} ${OBJS_BONUS}
-			ar rcs ${NAME} ${OBJS} ${OBJS_BONUS}
+${DIR_OBJS}%.o: %.c ${HEADERS} Makefile
+				cc ${FLAG} -c $< -o $@
 
-%.o:		%.c ${HEADERS} Makefile
-			cc ${FLAG} -I ${HEADERS} -c $< -o $@
+${DIR_OBJS}:
+				mkdir ${DIR_OBJS}
 
 clean:
-			rm -f ${OBJS} ${OBJS_BONUS}
+				${RMF} ${OBJS} ${OBJS_BONUS}
 
-fclean:		clean
-			rm -f ${NAME}
+fclean:			clean
+				${RMF} ${NAME}
 
-re:			fclean
-			${MAKE} all
-
-re_bonus:	fclean
-			${MAKE} bonus
+re:				fclean
+				${MAKE} all
