@@ -6,7 +6,7 @@
 #    By: vfries <vfries@student.42lyon.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/07 19:13:43 by vfries            #+#    #+#              #
-#    Updated: 2022/11/12 21:23:40 by vfries           ###   ########lyon.fr    #
+#    Updated: 2022/11/16 01:01:02 by vfries           ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -69,8 +69,6 @@ RMF =	 		rm -f
 
 HEADERS = 		libft.h
 
-.PHONY:			all clean fclean re
-
 all:			${DIR_OBJS}
 				@${MAKE} -j ${NAME}
 
@@ -94,3 +92,5 @@ re:				fclean
 
 echo_objs:
 				@echo ${OBJS}
+
+.PHONY:			all clean fclean re echo_objs
