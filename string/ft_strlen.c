@@ -1,24 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vfries <vfries@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/07 19:22:16 by vfries            #+#    #+#             */
-/*   Updated: 2022/11/19 11:45:41 by vfries           ###   ########lyon.fr   */
+/*   Created: 2022/10/09 12:44:46 by vfries            #+#    #+#             */
+/*   Updated: 2022/11/19 11:40:59 by vfries           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include <stddef.h>
 
-# include "ft_char.h"
-# include "ft_i_o.h"
-# include "ft_linked_list.h"
-# include "ft_mem.h"
-# include "ft_string.h"
+size_t	ft_strlen(const char *str)
+{
+	const char	*str_start;
 
-char	*ft_itoa(int n);
-
-#endif
+	str_start = str;
+	while (*str)
+		str++;
+	return (str - str_start);
+}

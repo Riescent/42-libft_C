@@ -1,24 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_lst_reverse_bonus.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vfries <vfries@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/07 19:22:16 by vfries            #+#    #+#             */
-/*   Updated: 2022/11/19 11:45:41 by vfries           ###   ########lyon.fr   */
+/*   Created: 2022/11/12 21:22:03 by vfries            #+#    #+#             */
+/*   Updated: 2022/11/19 11:35:06 by vfries           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "ft_linked_list.h"
+#include <stddef.h>
 
-# include "ft_char.h"
-# include "ft_i_o.h"
-# include "ft_linked_list.h"
-# include "ft_mem.h"
-# include "ft_string.h"
+void	ft_lst_reverse(t_list **lst)
+{
+	t_list	*previous;
+	t_list	*current;
+	t_list	*next;
 
-char	*ft_itoa(int n);
-
-#endif
+	previous = NULL;
+	current = *lst;
+	while (current)
+	{
+		next = current->next;
+		current->next = previous;
+		previous = current;
+		current = next;
+	}
+	*lst = previous;
+}

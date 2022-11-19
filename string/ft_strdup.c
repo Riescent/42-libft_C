@@ -1,42 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vfries <vfries@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/12 18:18:37 by vfries            #+#    #+#             */
-/*   Updated: 2022/11/19 11:44:38 by vfries           ###   ########lyon.fr   */
+/*   Created: 2022/10/11 16:43:45 by vfries            #+#    #+#             */
+/*   Updated: 2022/11/19 11:38:33 by vfries           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_string.h"
+#include <stdlib.h>
 
-char	*ft_itoa(int n)
+char	*ft_strdup(const char *s1)
 {
-	char	buf[12];
-	char	*buf_ptr;
-	char	is_negative;
+	char	*new_str;
+	size_t	result_size;
 
-	if (n == 0)
-		return (ft_strdup("0"));
-	if (n == -2147483648)
-		return (ft_strdup("-2147483648"));
-	if (n < 0)
-	{
-		n = -n;
-		is_negative = 1;
-	}
-	else
-		is_negative = 0;
-	buf[11] = '\0';
-	buf_ptr = buf + 10;
-	while (n > 0)
-	{
-		*buf_ptr-- = n % 10 + '0';
-		n /= 10;
-	}
-	if (is_negative)
-		*buf_ptr-- = '-';
-	return (ft_strdup(buf_ptr + 1));
+	result_size = ft_strlen(s1) + 1;
+	new_str = malloc(sizeof(char) * result_size);
+	if (new_str == NULL)
+		return (NULL);
+	ft_strlcpy(new_str, s1, result_size);
+	return (new_str);
 }

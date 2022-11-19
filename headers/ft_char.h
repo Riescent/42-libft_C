@@ -1,24 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_char.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vfries <vfries@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/07 19:22:16 by vfries            #+#    #+#             */
-/*   Updated: 2022/11/19 11:45:41 by vfries           ###   ########lyon.fr   */
+/*   Created: 2022/11/19 10:56:18 by vfries            #+#    #+#             */
+/*   Updated: 2022/11/19 10:58:52 by vfries           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#ifndef FT_CHAR_H
+# define FT_CHAR_H
 
-# include "ft_char.h"
-# include "ft_i_o.h"
-# include "ft_linked_list.h"
-# include "ft_mem.h"
-# include "ft_string.h"
+int	ft_isalnum(int c);
+int	ft_isalpha(int c);
+int	ft_isascii(int c);
+int	ft_isdigit(int c);
+int	ft_isprint(int c);
 
-char	*ft_itoa(int n);
+int	ft_tolower(int c);
+int	ft_toupper(int c);
 
 #endif

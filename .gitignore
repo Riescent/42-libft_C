@@ -1,3 +1,14 @@
+# Test
+.test
+libftTester
+
+# other
+libft_fr.subject.pdf
+.normignore
+
+# IDE
+.vscode
+
 # Prerequisites
 *.d
 

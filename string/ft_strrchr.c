@@ -1,24 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vfries <vfries@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/07 19:22:16 by vfries            #+#    #+#             */
-/*   Updated: 2022/11/19 11:45:41 by vfries           ###   ########lyon.fr   */
+/*   Created: 2022/10/11 13:58:00 by vfries            #+#    #+#             */
+/*   Updated: 2022/11/19 11:41:57 by vfries           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include <stddef.h>
 
-# include "ft_char.h"
-# include "ft_i_o.h"
-# include "ft_linked_list.h"
-# include "ft_mem.h"
-# include "ft_string.h"
+char	*ft_strrchr(const char *s, int c)
+{
+	const char	*last_occurence;
 
-char	*ft_itoa(int n);
-
-#endif
+	last_occurence = NULL;
+	while (*s)
+	{
+		if (*s == (char)c)
+			last_occurence = s;
+		s++;
+	}
+	if ((char)c == '\0')
+		return ((char *)s);
+	return ((char *)last_occurence);
+}

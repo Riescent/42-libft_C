@@ -1,42 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vfries <vfries@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/12 18:18:37 by vfries            #+#    #+#             */
-/*   Updated: 2022/11/19 11:44:38 by vfries           ###   ########lyon.fr   */
+/*   Created: 2022/10/11 13:36:26 by vfries            #+#    #+#             */
+/*   Updated: 2022/11/19 11:40:53 by vfries           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_string.h"
+#include <stddef.h>
 
-char	*ft_itoa(int n)
+size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
-	char	buf[12];
-	char	*buf_ptr;
-	char	is_negative;
+	size_t	src_len;
 
-	if (n == 0)
-		return (ft_strdup("0"));
-	if (n == -2147483648)
-		return (ft_strdup("-2147483648"));
-	if (n < 0)
+	if (size == 0)
+		return (ft_strlen(src));
+	src_len = 0;
+	while (*src)
 	{
-		n = -n;
-		is_negative = 1;
+		if (src_len < size)
+			*dst++ = *src;
+		src_len++;
+		src++;
 	}
+	if (src_len >= size)
+		*--dst = '\0';
 	else
-		is_negative = 0;
-	buf[11] = '\0';
-	buf_ptr = buf + 10;
-	while (n > 0)
-	{
-		*buf_ptr-- = n % 10 + '0';
-		n /= 10;
-	}
-	if (is_negative)
-		*buf_ptr-- = '-';
-	return (ft_strdup(buf_ptr + 1));
+		*dst = '\0';
+	return (src_len);
 }

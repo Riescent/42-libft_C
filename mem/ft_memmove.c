@@ -1,24 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vfries <vfries@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/07 19:22:16 by vfries            #+#    #+#             */
-/*   Updated: 2022/11/19 11:45:41 by vfries           ###   ########lyon.fr   */
+/*   Created: 2022/10/10 15:11:33 by vfries            #+#    #+#             */
+/*   Updated: 2022/11/19 11:37:12 by vfries           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "ft_mem.h"
+#include <stddef.h>
 
-# include "ft_char.h"
-# include "ft_i_o.h"
-# include "ft_linked_list.h"
-# include "ft_mem.h"
-# include "ft_string.h"
+void	*ft_memmove(void *dst, const void *src, size_t len)
+{
+	void	*start_dst;
 
-char	*ft_itoa(int n);
-
-#endif
+	start_dst = dst;
+	if (dst > src)
+		ft_memcpy(dst, src, len);
+	else if (dst < src)
+		while (len--)
+			*(unsigned char *)dst++ = *(unsigned char *)src++;
+	return (start_dst);
+}

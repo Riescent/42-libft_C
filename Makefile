@@ -6,58 +6,56 @@
 #    By: vfries <vfries@student.42lyon.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/07 19:13:43 by vfries            #+#    #+#              #
-#    Updated: 2022/11/16 01:01:02 by vfries           ###   ########lyon.fr    #
+#    Updated: 2022/11/19 11:56:45 by vfries           ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
 NAME =			libft.a
 
-SRCS =			ft_isalpha.c	\
-				ft_toupper.c	\
-				ft_isdigit.c	\
-				ft_tolower.c	\
-				ft_isalnum.c	\
-				ft_strchr.c		\
-				ft_isprint.c	\
-				ft_strncmp.c	\
-				ft_strlen.c		\
-				ft_memchr.c		\
-				ft_memset.c		\
-				ft_memcmp.c		\
-				ft_bzero.c		\
-				ft_strnstr.c	\
-				ft_memcpy.c		\
-				ft_atoi.c		\
-				ft_isascii.c	\
-				ft_memmove.c	\
-				ft_strlcat.c	\
-				ft_strlcpy.c	\
-				ft_strrchr.c	\
-				ft_calloc.c		\
-				ft_strdup.c		\
-				ft_substr.c		\
-				ft_strjoin.c	\
-				ft_strtrim.c	\
-				ft_split.c		\
-				ft_itoa.c		\
-				ft_strmapi.c	\
-				ft_striteri.c	\
-				ft_putchar_fd.c	\
-				ft_putstr_fd.c	\
-				ft_putendl_fd.c	\
-				ft_putnbr_fd.c	\
-\
-				ft_lstnew_bonus.c		\
-				ft_lstadd_front_bonus.c	\
-				ft_lstsize_bonus.c		\
-				ft_lstlast_bonus.c		\
-				ft_lstadd_back_bonus.c	\
-				ft_lstdelone_bonus.c	\
-				ft_lstclear_bonus.c		\
-				ft_lstiter_bonus.c		\
-				ft_lstmap_bonus.c		\
-\
-				ft_lst_reverse_bonus.c
+SRCS =			char/ft_isalnum.c	\
+				char/ft_isalpha.c	\
+				char/ft_isascii.c	\
+				char/ft_isdigit.c	\
+				char/ft_isprint.c	\
+				char/ft_toupper.c	\
+				char/ft_tolower.c	\
+				i_o/ft_putchar_fd.c	\
+				i_o/ft_putendl_fd.c	\
+				i_o/ft_putnbr_fd.c	\
+				i_o/ft_putstr_fd.c	\
+				linked_list/ft_lst_reverse_bonus.c	\
+				linked_list/ft_lstadd_back_bonus.c	\
+				linked_list/ft_lstadd_front_bonus.c	\
+				linked_list/ft_lstclear_bonus.c		\
+				linked_list/ft_lstdelone_bonus.c	\
+				linked_list/ft_lstiter_bonus.c		\
+				linked_list/ft_lstlast_bonus.c		\
+				linked_list/ft_lstmap_bonus.c		\
+				linked_list/ft_lstnew_bonus.c		\
+				linked_list/ft_lstsize_bonus.c		\
+				mem/ft_bzero.c		\
+				mem/ft_calloc.c		\
+				mem/ft_memchr.c		\
+				mem/ft_memcmp.c		\
+				mem/ft_memcpy.c		\
+				mem/ft_memmove.c	\
+				mem/ft_memset.c		\
+				string/ft_atoi.c		\
+				string/ft_split.c		\
+				string/ft_strchr.c		\
+				string/ft_strdup.c		\
+				string/ft_striteri.c	\
+				string/ft_strjoin.c		\
+				string/ft_strlcat.c		\
+				string/ft_strlcpy.c		\
+				string/ft_strlen.c		\
+				string/ft_strmapi.c		\
+				string/ft_strncmp.c		\
+				string/ft_strnstr.c		\
+				string/ft_strrchr.c		\
+				string/ft_strtrim.c		\
+				string/ft_substr.c		\
+				ft_itoa.c
 
 DIR_OBJS = 		./.objs/
 
@@ -67,7 +65,16 @@ FLAG =			-Wall -Wextra -Werror
 
 RMF =	 		rm -f
 
-HEADERS = 		libft.h
+INCLUDES =		headers/
+
+HEADERS = 		headers/ft_char.h			\
+				headers/ft_i_o.h			\
+				headers/ft_linked_list.h	\
+				headers/ft_mem.h			\
+				headers/ft_string.h			\
+				libft.h
+
+MKDIR = 		mkdir -p
 
 all:			${DIR_OBJS}
 				@${MAKE} -j ${NAME}
@@ -75,11 +82,18 @@ all:			${DIR_OBJS}
 $(NAME):		${OBJS}
 				ar rcs ${NAME} ${OBJS}
 
-${DIR_OBJS}%.o: %.c ${HEADERS} Makefile
-				cc ${FLAG} -c $< -o $@
-
 ${DIR_OBJS}:
-				mkdir ${DIR_OBJS}
+			echo ${OBJS} | tr ' ' '\n'\
+				| sed 's|\(.*\)/.*|\1|'\
+				| sed 's/^/${MKDIR} /'\
+				| sh -s
+			# Prints all OBJS. 1 per line
+				# Removes the .o file names
+				# Adds mkdir -p at start of the line
+				# Executes the script (Creates all folders)
+
+${DIR_OBJS}%.o: %.c ${HEADERS} Makefile
+				cc ${FLAG} -I ${INCLUDES} -c $< -o $@
 
 clean:
 				${RMF} ${OBJS} ${OBJS_BONUS}

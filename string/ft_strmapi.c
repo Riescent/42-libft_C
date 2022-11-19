@@ -1,42 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vfries <vfries@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/12 18:18:37 by vfries            #+#    #+#             */
-/*   Updated: 2022/11/19 11:44:38 by vfries           ###   ########lyon.fr   */
+/*   Created: 2022/10/12 18:58:07 by vfries            #+#    #+#             */
+/*   Updated: 2022/11/19 11:41:12 by vfries           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_string.h"
+#include <stdlib.h>
 
-char	*ft_itoa(int n)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	char	buf[12];
-	char	*buf_ptr;
-	char	is_negative;
+	char	*result;
+	char	*start_result;
 
-	if (n == 0)
-		return (ft_strdup("0"));
-	if (n == -2147483648)
-		return (ft_strdup("-2147483648"));
-	if (n < 0)
+	if (s == NULL || f == NULL)
+		return (NULL);
+	result = malloc(sizeof(char) * (ft_strlen(s) + 1));
+	if (result == NULL)
+		return (NULL);
+	start_result = result;
+	while (*s)
 	{
-		n = -n;
-		is_negative = 1;
+		*result = f(result - start_result, *s++);
+		result++;
 	}
-	else
-		is_negative = 0;
-	buf[11] = '\0';
-	buf_ptr = buf + 10;
-	while (n > 0)
-	{
-		*buf_ptr-- = n % 10 + '0';
-		n /= 10;
-	}
-	if (is_negative)
-		*buf_ptr-- = '-';
-	return (ft_strdup(buf_ptr + 1));
+	*result = '\0';
+	return (start_result);
 }
