@@ -6,7 +6,7 @@
 #    By: vfries <vfries@student.42lyon.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/07 19:13:43 by vfries            #+#    #+#              #
-#    Updated: 2022/11/19 11:56:45 by vfries           ###   ########lyon.fr    #
+#    Updated: 2022/11/19 12:24:55 by vfries           ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,10 +19,11 @@ SRCS =			char/ft_isalnum.c	\
 				char/ft_isprint.c	\
 				char/ft_toupper.c	\
 				char/ft_tolower.c	\
-				i_o/ft_putchar_fd.c	\
-				i_o/ft_putendl_fd.c	\
-				i_o/ft_putnbr_fd.c	\
-				i_o/ft_putstr_fd.c	\
+				i_o/ft_putchar_fd.c		\
+				i_o/ft_putendl_fd.c		\
+				i_o/ft_putnbr_fd.c		\
+				i_o/ft_putstr_fd.c		\
+				i_o/ft_putstr_bonus.c	\
 				linked_list/ft_lst_reverse_bonus.c	\
 				linked_list/ft_lstadd_back_bonus.c	\
 				linked_list/ft_lstadd_front_bonus.c	\

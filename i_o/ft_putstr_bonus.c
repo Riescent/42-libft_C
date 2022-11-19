@@ -1,24 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_i_o.h                                           :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vfries <vfries@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/19 11:00:10 by vfries            #+#    #+#             */
-/*   Updated: 2022/11/19 12:25:28 by vfries           ###   ########lyon.fr   */
+/*   Created: 2022/11/19 12:22:54 by vfries            #+#    #+#             */
+/*   Updated: 2022/11/19 12:24:26 by vfries           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_I_O_H
-# define FT_I_O_H
+#include "ft_string.h"
+#include <unistd.h>
 
-void	ft_putchar_fd(char c, int fd);
-void	ft_putendl_fd(char *s, int fd);
-void	ft_putnbr_fd(int n, int fd);
-void	ft_putstr_fd(char *s, int fd);
-
-// Bonus
-void	ft_putstr(char *s);
-
-#endif
+void	ft_putstr_fd(char *s)
+{
+	if (s == NULL)
+		return ;
+	write(1, s, ft_strlen(s));
+}
