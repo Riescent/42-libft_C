@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_i_o.h                                           :+:      :+:    :+:   */
+/*   ft_io.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vfries <vfries@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 11:00:10 by vfries            #+#    #+#             */
-/*   Updated: 2022/11/19 12:25:28 by vfries           ###   ########lyon.fr   */
+/*   Updated: 2022/11/19 12:29:31 by vfries           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_I_O_H
-# define FT_I_O_H
+#ifndef FT_IO_H
+# define FT_IO_H
 
 void	ft_putchar_fd(char c, int fd);
 void	ft_putendl_fd(char *s, int fd);
