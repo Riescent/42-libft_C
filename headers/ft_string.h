@@ -6,7 +6,7 @@
 /*   By: vfries <vfries@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 11:08:57 by vfries            #+#    #+#             */
-/*   Updated: 2022/11/19 11:10:48 by vfries           ###   ########lyon.fr   */
+/*   Updated: 2022/11/20 02:41:57 by vfries           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 # include <stddef.h>
 
-int		ft_atoi(const char *str);
 char	**ft_split(char const *s, char c);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strdup(const char *s1);

@@ -1,15 +1,3 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: vfries <vfries@student.42lyon.fr>          +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/09/07 19:13:43 by vfries            #+#    #+#              #
-#    Updated: 2022/11/19 12:29:16 by vfries           ###   ########lyon.fr    #
-#                                                                              #
-# **************************************************************************** #
-
 NAME =			libft.a
 
 SRCS =			char/ft_isalnum.c	\
@@ -19,6 +7,8 @@ SRCS =			char/ft_isalnum.c	\
 				char/ft_isprint.c	\
 				char/ft_toupper.c	\
 				char/ft_tolower.c	\
+				conversion/ft_atoi.c	\
+				conversion/ft_itoa.c	\
 				io/ft_putchar_fd.c		\
 				io/ft_putendl_fd.c		\
 				io/ft_putnbr_fd.c		\
@@ -41,7 +31,6 @@ SRCS =			char/ft_isalnum.c	\
 				mem/ft_memcpy.c		\
 				mem/ft_memmove.c	\
 				mem/ft_memset.c		\
-				string/ft_atoi.c		\
 				string/ft_split.c		\
 				string/ft_strchr.c		\
 				string/ft_strdup.c		\
@@ -55,8 +44,7 @@ SRCS =			char/ft_isalnum.c	\
 				string/ft_strnstr.c		\
 				string/ft_strrchr.c		\
 				string/ft_strtrim.c		\
-				string/ft_substr.c		\
-				ft_itoa.c
+				string/ft_substr.c
 
 DIR_OBJS = 		./.objs/
 
