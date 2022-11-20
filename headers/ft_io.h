@@ -6,7 +6,7 @@
 /*   By: vfries <vfries@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 11:00:10 by vfries            #+#    #+#             */
-/*   Updated: 2022/11/19 12:29:31 by vfries           ###   ########lyon.fr   */
+/*   Updated: 2022/11/20 04:04:38 by vfries           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,6 @@ void	ft_putstr_fd(char *s, int fd);
 
 // Bonus
 void	ft_putstr(char *s);
+int		ft_printf(const char *format, ...);
 
 #endif
