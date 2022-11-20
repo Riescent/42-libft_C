@@ -114,7 +114,7 @@ re:				fclean
 echo_objs:
 				@echo ${OBJS}
 
-debug:
+debug:			${DIR_OBJS}
 				@${MAKE} -j ${NAME_DEBUG} FLAGS="${FLAGS} ${DEBUG_FLAGS}"
 
 ${NAME_DEBUG}: ${OBJS_DEBUG}
