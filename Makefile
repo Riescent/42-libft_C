@@ -59,7 +59,11 @@ DIR_OBJS = 		./.objs/
 
 OBJS =			${addprefix ${DIR_OBJS},${SRCS:.c=.o}}
 
+OBJS_DEBUG =	${addprefix ${DIR_OBJS},${SRCS:.c=_debug.o}}
+
 FLAGS =			-Wall -Wextra -Werror
+
+DEBUG_FLAGS	=	-g3 -fsanitize=address
 
 RMF =	 		rm -f
 
@@ -80,7 +84,7 @@ all:			${DIR_OBJS}
 $(NAME):		${OBJS}
 				ar rcs ${NAME} ${OBJS}
 
-${DIR_OBJS}:
+${DIR_OBJS}: Makefile
 			echo ${OBJS} | tr ' ' '\n'\
 				| sed 's|\(.*\)/.*|\1|'\
 				| sed 's/^/${MKDIR} /'\
@@ -93,8 +97,11 @@ ${DIR_OBJS}:
 ${DIR_OBJS}%.o: %.c ${HEADERS} Makefile
 				cc ${FLAGS} -I ${INCLUDES} -c $< -o $@
 
+${DIR_OBJS}%_debug.o: %.c ${HEADERS} Makefile
+				cc ${FLAGS} -I ${INCLUDES} -c $< -o $@
+
 clean:
-				${RMF} ${OBJS} ${OBJS_BONUS}
+				${RMF} ${OBJS} ${OBJS_DEBUG}
 
 fclean:			clean
 				${RMF} ${NAME}
@@ -105,4 +112,10 @@ re:				fclean
 echo_objs:
 				@echo ${OBJS}
 
-.PHONY:			all clean fclean re echo_objs
+debug:
+				${MAKE} -j debug_create_libft_a FLAGS="${FLAGS} ${DEBUG_FLAGS}"
+
+debug_create_libft_a: ${OBJS_DEBUG}
+				ar rcs ${NAME} ${OBJS_DEBUG}
+
+.PHONY:			all clean fclean re echo_objs debug debug_create_libft_a
