@@ -1,5 +1,7 @@
 NAME =			libft.a
 
+NAME_DEBUG =	libft_debug.a
+
 SRCS =			char/ft_isalnum.c	\
 				char/ft_isalpha.c	\
 				char/ft_isascii.c	\
@@ -85,14 +87,14 @@ $(NAME):		${OBJS}
 				ar rcs ${NAME} ${OBJS}
 
 ${DIR_OBJS}: Makefile
-			echo ${OBJS} | tr ' ' '\n'\
+			@echo ${OBJS} | tr ' ' '\n'\
 				| sed 's|\(.*\)/.*|\1|'\
 				| sed 's/^/${MKDIR} /'\
 				| sh -s
-			# Prints all OBJS. 1 per line
-				# Removes the .o file names
-				# Adds mkdir -p at start of each lines
-				# Executes the script (Creates all folders)
+			@# Prints all OBJS. 1 per line
+				@# Removes the .o file names
+				@# Adds mkdir -p at start of each lines
+				@# Executes the script (Creates all folders)
 
 ${DIR_OBJS}%.o: %.c ${HEADERS} Makefile
 				cc ${FLAGS} -I ${INCLUDES} -c $< -o $@
@@ -104,7 +106,7 @@ clean:
 				${RMF} ${OBJS} ${OBJS_DEBUG}
 
 fclean:			clean
-				${RMF} ${NAME}
+				${RMF} ${NAME} ${NAME_DEBUG}
 
 re:				fclean
 				${MAKE} all
@@ -113,9 +115,9 @@ echo_objs:
 				@echo ${OBJS}
 
 debug:
-				${MAKE} -j debug_create_libft_a FLAGS="${FLAGS} ${DEBUG_FLAGS}"
+				@${MAKE} -j ${NAME_DEBUG} FLAGS="${FLAGS} ${DEBUG_FLAGS}"
 
-debug_create_libft_a: ${OBJS_DEBUG}
-				ar rcs ${NAME} ${OBJS_DEBUG}
+${NAME_DEBUG}: ${OBJS_DEBUG}
+				ar rcs ${NAME_DEBUG} ${OBJS_DEBUG}
 
 .PHONY:			all clean fclean re echo_objs debug debug_create_libft_a
