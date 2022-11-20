@@ -59,7 +59,7 @@ DIR_OBJS = 		./.objs/
 
 OBJS =			${addprefix ${DIR_OBJS},${SRCS:.c=.o}}
 
-FLAG =			-Wall -Wextra -Werror
+FLAGS =			-Wall -Wextra -Werror
 
 RMF =	 		rm -f
 
@@ -87,11 +87,11 @@ ${DIR_OBJS}:
 				| sh -s
 			# Prints all OBJS. 1 per line
 				# Removes the .o file names
-				# Adds mkdir -p at start of the line
+				# Adds mkdir -p at start of each lines
 				# Executes the script (Creates all folders)
 
 ${DIR_OBJS}%.o: %.c ${HEADERS} Makefile
-				cc ${FLAG} -I ${INCLUDES} -c $< -o $@
+				cc ${FLAGS} -I ${INCLUDES} -c $< -o $@
 
 clean:
 				${RMF} ${OBJS} ${OBJS_BONUS}
