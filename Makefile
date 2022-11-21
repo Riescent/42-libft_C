@@ -72,6 +72,7 @@ RMF =	 		rm -f
 INCLUDES =		headers/
 
 HEADERS = 		headers/ft_char.h			\
+				headers/ft_conversion.h		\
 				headers/ft_io.h				\
 				headers/ft_linked_list.h	\
 				headers/ft_mem.h			\
