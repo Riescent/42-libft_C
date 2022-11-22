@@ -13,6 +13,11 @@ SRCS =			char/ft_isalnum.c	\
 				conversion/ft_atoi.c				\
 				conversion/ft_itoa.c				\
 \
+				get_next_line/get_next_line_multi_fd.c			\
+				get_next_line/get_next_line_utils_multi_fd.c	\
+				get_next_line/get_next_line_utils.c				\
+				get_next_line/get_next_line.c					\
+\
 				io/ft_putchar_fd.c					\
 				io/ft_putendl_fd.c					\
 				io/ft_putnbr_fd.c					\
@@ -73,6 +78,7 @@ INCLUDES =		headers/
 
 HEADERS = 		headers/ft_char.h			\
 				headers/ft_conversion.h		\
+				headers/ft_get_next_line.h	\
 				headers/ft_io.h				\
 				headers/ft_linked_list.h	\
 				headers/ft_mem.h			\
