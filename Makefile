@@ -68,7 +68,7 @@ OBJS =			${addprefix ${DIR_OBJS},${SRCS:.c=.o}}
 
 OBJS_DEBUG =	${addprefix ${DIR_OBJS},${SRCS:.c=_debug.o}}
 
-FLAGS =			-Wall -Wextra -Werror
+FLAGS =			-Wall -Wextra -Werror -O3
 
 DEBUG_FLAGS	=	-g3 -fsanitize=address
 
