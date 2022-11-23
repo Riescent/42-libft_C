@@ -127,4 +127,4 @@ debug:			${DIR_OBJS}
 ${NAME_DEBUG}: ${OBJS_DEBUG}
 				ar rcs ${NAME_DEBUG} ${OBJS_DEBUG}
 
-.PHONY:			all clean fclean re echo_objs debug debug_create_libft_a
+.PHONY:			all clean fclean re echo_objs debug
