@@ -33,7 +33,7 @@ static size_t	ft_get_word_count(const char *s, char c)
 static char	**ft_free_result(char **result, size_t i)
 {
 	while (i--)
-		free(*result++);
+		free(result[i]);
 	free(result);
 	return (NULL);
 }
