@@ -2,6 +2,7 @@ NAME =			libft.a
 
 NAME_DEBUG =	libft_debug.a
 
+
 SRCS =			char/ft_isalnum.c	\
 				char/ft_isalpha.c	\
 				char/ft_isascii.c	\
@@ -9,9 +10,6 @@ SRCS =			char/ft_isalnum.c	\
 				char/ft_isprint.c	\
 				char/ft_toupper.c	\
 				char/ft_tolower.c	\
-\
-				conversion/ft_atoi.c				\
-				conversion/ft_itoa.c				\
 \
 				get_next_line/get_next_line_multi_fd.c			\
 				get_next_line/get_next_line_utils_multi_fd.c	\
@@ -47,6 +45,16 @@ SRCS =			char/ft_isalnum.c	\
 				mem/ft_memmove.c	\
 				mem/ft_memset.c		\
 \
+				numbers/ft_swap/ft_swap_double.c	\
+				numbers/ft_swap/ft_swap_int.c		\
+				numbers/ft_swap/ft_swap_long.c		\
+				numbers/ft_swap/ft_swap_size_t.c	\
+				numbers/ft_swap/ft_swap_ssize_t.c	\
+				numbers/ft_swap/ft_swap_uint.c		\
+				numbers/ft_abs.c	\
+				numbers/ft_atoi.c	\
+				numbers/ft_itoa.c	\
+\
 				string/ft_split.c		\
 				string/ft_strchr.c		\
 				string/ft_strdup.c		\
@@ -62,33 +70,38 @@ SRCS =			char/ft_isalnum.c	\
 				string/ft_strtrim.c		\
 				string/ft_substr.c
 
+
+HEADERS = 		headers/ft_char.h			\
+				headers/ft_get_next_line.h	\
+				headers/ft_io.h				\
+				headers/ft_linked_list.h	\
+				headers/ft_mem.h			\
+				headers/ft_numbers.h		\
+				headers/ft_string.h			\
+				libft.h
+
+INCLUDES =		headers/
+
+
 DIR_OBJS = 		./.objs/
 
 OBJS =			${addprefix ${DIR_OBJS},${SRCS:.c=.o}}
 
 OBJS_DEBUG =	${addprefix ${DIR_OBJS},${SRCS:.c=_debug.o}}
 
+
 FLAGS =			-Wall -Wextra -Werror -O3
 
 DEBUG_FLAGS	=	-g3 -fsanitize=address
 
+
 RMF =	 		rm -f
-
-INCLUDES =		headers/
-
-HEADERS = 		headers/ft_char.h			\
-				headers/ft_conversion.h		\
-				headers/ft_get_next_line.h	\
-				headers/ft_io.h				\
-				headers/ft_linked_list.h	\
-				headers/ft_mem.h			\
-				headers/ft_string.h			\
-				libft.h
 
 MKDIR = 		mkdir -p
 
+
 all:			${DIR_OBJS}
-				@${MAKE} -j ${NAME}
+				@${MAKE} ${NAME}
 
 $(NAME):		${OBJS}
 				ar rcs ${NAME} ${OBJS}
@@ -118,13 +131,16 @@ fclean:			clean
 re:				fclean
 				${MAKE} all
 
+re_debug:		fclean
+				${MAKE} debug
+
 echo_objs:
 				@echo ${OBJS}
 
 debug:			${DIR_OBJS}
-				@${MAKE} -j ${NAME_DEBUG} FLAGS="${FLAGS} ${DEBUG_FLAGS}"
+				@${MAKE} ${NAME_DEBUG} FLAGS="${FLAGS} ${DEBUG_FLAGS}"
 
 ${NAME_DEBUG}: ${OBJS_DEBUG}
 				ar rcs ${NAME_DEBUG} ${OBJS_DEBUG}
 
-.PHONY:			all clean fclean re echo_objs debug
+.PHONY:			all clean fclean re re_debug echo_objs debug

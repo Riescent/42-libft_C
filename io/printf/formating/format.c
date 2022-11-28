@@ -6,12 +6,12 @@
 /*   By: vfries <vfries@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 21:48:56 by vfries            #+#    #+#             */
-/*   Updated: 2022/11/20 04:10:34 by vfries           ###   ########lyon.fr   */
+/*   Updated: 2022/11/28 15:03:25 by vfries           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_string.h"
-#include "ft_conversion.h"
+#include "ft_numbers.h"
 #include <stdlib.h>
 #include <stdarg.h>
 
