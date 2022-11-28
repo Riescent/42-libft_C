@@ -71,7 +71,8 @@ SRCS =			char/ft_isalnum.c	\
 				string/ft_substr.c
 
 
-HEADERS = 		headers/ft_char.h			\
+HEADERS = 		headers/ft_bools.h			\
+				headers/ft_char.h			\
 				headers/ft_get_next_line.h	\
 				headers/ft_io.h				\
 				headers/ft_linked_list.h	\
