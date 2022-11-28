@@ -6,14 +6,14 @@
 /*   By: vfries <vfries@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 19:50:11 by vfries            #+#    #+#             */
-/*   Updated: 2022/11/28 19:50:57 by vfries           ###   ########lyon.fr   */
+/*   Updated: 2022/11/28 20:26:16 by vfries           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_BOOLS_H
 # define FT_BOOLS_H
 
-enum e_bool
+typedef enum e_bool
 {
 	FALSE,
 	TRUE
