@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_CONVERSION_H
-# define FT_CONVERSION_H
+#ifndef FT_NUMBERS_H
+# define FT_NUMBERS_H
 
 # include <stddef.h>
 # include <sys/types.h>

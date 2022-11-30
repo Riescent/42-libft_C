@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_BONUS_H
-# define GET_NEXT_LINE_BONUS_H
+#ifndef GET_NEXT_LINE_MULTI_FD_H
+# define GET_NEXT_LINE_MULTI_FD_H
 # include <stdlib.h>
 
 # ifndef BUFFER_SIZE
