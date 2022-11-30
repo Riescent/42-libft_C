@@ -3,7 +3,7 @@ NAME =			libft.a
 NAME_DEBUG =	libft_debug.a
 
 
-SRCS =			char/ft_isalnum.c	\
+C_FILES =		char/ft_isalnum.c	\
 				char/ft_isalpha.c	\
 				char/ft_isascii.c	\
 				char/ft_isdigit.c	\
@@ -70,17 +70,19 @@ SRCS =			char/ft_isalnum.c	\
 				string/ft_strtrim.c		\
 				string/ft_substr.c
 
+SRCS = ${addprefix srcs/, ${C_FILES}}
 
-HEADERS = 		headers/ft_char.h			\
-				headers/ft_get_next_line.h	\
-				headers/ft_io.h				\
-				headers/ft_linked_list.h	\
-				headers/ft_mem.h			\
-				headers/ft_numbers.h		\
-				headers/ft_string.h			\
-				libft.h
 
-INCLUDES =		headers/
+HEADERS = 		${INCLUDES}ft_char.h			\
+				${INCLUDES}ft_get_next_line.h	\
+				${INCLUDES}ft_io.h				\
+				${INCLUDES}ft_linked_list.h		\
+				${INCLUDES}ft_mem.h				\
+				${INCLUDES}ft_numbers.h			\
+				${INCLUDES}ft_string.h			\
+				${INCLUDES}libft.h
+
+INCLUDES =		includes/
 
 
 DIR_OBJS = 		./.objs/
