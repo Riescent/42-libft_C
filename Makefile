@@ -8,6 +8,7 @@ C_FILES =		char/ft_isalnum.c	\
 				char/ft_isascii.c	\
 				char/ft_isdigit.c	\
 				char/ft_isprint.c	\
+				char/ft_isspace.c	\
 				char/ft_toupper.c	\
 				char/ft_tolower.c	\
 \
