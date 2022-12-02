@@ -59,6 +59,7 @@ C_FILES =		char/ft_isalnum.c	\
 \
 				string/split/ft_free_split.c	\
 				string/split/ft_split_set.c		\
+				string/split/ft_split_size.c	\
 				string/split/ft_split.c			\
 				string/ft_strchr.c				\
 				string/ft_strdup.c				\
