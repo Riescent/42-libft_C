@@ -57,19 +57,20 @@ C_FILES =		char/ft_isalnum.c	\
 				numbers/ft_atoll.c	\
 				numbers/ft_itoa.c	\
 \
-				string/ft_split.c		\
-				string/ft_strchr.c		\
-				string/ft_strdup.c		\
-				string/ft_striteri.c	\
-				string/ft_strjoin.c		\
-				string/ft_strlcat.c		\
-				string/ft_strlcpy.c		\
-				string/ft_strlen.c		\
-				string/ft_strmapi.c		\
-				string/ft_strncmp.c		\
-				string/ft_strnstr.c		\
-				string/ft_strrchr.c		\
-				string/ft_strtrim.c		\
+				string/split/ft_split_set.c		\
+				string/split/ft_split.c			\
+				string/ft_strchr.c				\
+				string/ft_strdup.c				\
+				string/ft_striteri.c			\
+				string/ft_strjoin.c				\
+				string/ft_strlcat.c				\
+				string/ft_strlcpy.c				\
+				string/ft_strlen.c				\
+				string/ft_strmapi.c				\
+				string/ft_strncmp.c				\
+				string/ft_strnstr.c				\
+				string/ft_strrchr.c				\
+				string/ft_strtrim.c				\
 				string/ft_substr.c
 
 SRCS = ${addprefix srcs/, ${C_FILES}}
