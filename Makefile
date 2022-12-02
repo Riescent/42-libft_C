@@ -53,6 +53,7 @@ C_FILES =		char/ft_isalnum.c	\
 				numbers/ft_swap/ft_swap_uint.c		\
 				numbers/ft_abs.c	\
 				numbers/ft_atoi.c	\
+				numbers/ft_atoll.c	\
 				numbers/ft_itoa.c	\
 \
 				string/ft_split.c		\
