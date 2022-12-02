@@ -6,7 +6,7 @@
 /*   By: vfries <vfries@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 11:08:57 by vfries            #+#    #+#             */
-/*   Updated: 2022/12/02 22:05:39 by vfries           ###   ########lyon.fr   */
+/*   Updated: 2022/12/02 23:07:49 by vfries           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 
 char	**ft_split_set(char const *s, char *set);
 char	**ft_split(char const *s, char c);
+void	ft_free_split(char **strs);
 
 char	*ft_strchr(const char *s, int c);
 char	*ft_strdup(const char *s1);
