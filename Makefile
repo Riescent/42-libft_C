@@ -27,16 +27,17 @@ C_FILES =		char/ft_isalnum.c	\
 				io/printf/formating/format.c		\
 				io/printf/formating/format_u_x.c	\
 \
-				linked_list/ft_lst_reverse_bonus.c	\
-				linked_list/ft_lstadd_back_bonus.c	\
-				linked_list/ft_lstadd_front_bonus.c	\
-				linked_list/ft_lstclear_bonus.c		\
-				linked_list/ft_lstdelone_bonus.c	\
-				linked_list/ft_lstiter_bonus.c		\
-				linked_list/ft_lstlast_bonus.c		\
-				linked_list/ft_lstmap_bonus.c		\
-				linked_list/ft_lstnew_bonus.c		\
-				linked_list/ft_lstsize_bonus.c		\
+				linked_list/ft_lst_get_next_free_current.c	\
+				linked_list/ft_lst_reverse_bonus.c			\
+				linked_list/ft_lstadd_back_bonus.c			\
+				linked_list/ft_lstadd_front_bonus.c			\
+				linked_list/ft_lstclear_bonus.c				\
+				linked_list/ft_lstdelone_bonus.c			\
+				linked_list/ft_lstiter_bonus.c				\
+				linked_list/ft_lstlast_bonus.c				\
+				linked_list/ft_lstmap_bonus.c				\
+				linked_list/ft_lstnew_bonus.c				\
+				linked_list/ft_lstsize_bonus.c				\
 \
 				mem/ft_bzero.c		\
 				mem/ft_calloc.c		\
