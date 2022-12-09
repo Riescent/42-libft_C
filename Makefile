@@ -3,7 +3,9 @@ NAME =			libft.a
 NAME_DEBUG =	libft_debug.a
 
 
-C_FILES =		char/ft_isalnum.c	\
+SRCS_PATH =		srcs/
+
+SRCS = 			char/ft_isalnum.c	\
 				char/ft_isalpha.c	\
 				char/ft_isascii.c	\
 				char/ft_isdigit.c	\
@@ -76,8 +78,6 @@ C_FILES =		char/ft_isalnum.c	\
 				string/ft_strtrim.c				\
 				string/ft_substr.c
 
-SRCS = ${addprefix srcs/, ${C_FILES}}
-
 
 HEADERS = 		${INCLUDES}ft_char.h			\
 				${INCLUDES}ft_get_next_line.h	\
@@ -91,7 +91,7 @@ HEADERS = 		${INCLUDES}ft_char.h			\
 INCLUDES =		includes/
 
 
-DIR_OBJS = 		./.objs/
+DIR_OBJS = 		build/
 
 OBJS =			${addprefix ${DIR_OBJS},${SRCS:.c=.o}}
 
@@ -124,10 +124,10 @@ ${DIR_OBJS}: Makefile
 				@# Adds mkdir -p at start of each lines
 				@# Executes the script (Creates all folders)
 
-${DIR_OBJS}%.o: %.c ${HEADERS} Makefile
+${DIR_OBJS}%.o: ${SRCS_PATH}%.c ${HEADERS} Makefile
 				cc ${FLAGS} -I ${INCLUDES} -c $< -o $@
 
-${DIR_OBJS}%_debug.o: %.c ${HEADERS} Makefile
+${DIR_OBJS}%_debug.o: ${SRCS_PATH}%.c ${HEADERS} Makefile
 				cc ${FLAGS} -I ${INCLUDES} -c $< -o $@
 
 clean:

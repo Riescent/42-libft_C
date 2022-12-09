@@ -18,6 +18,7 @@ libft_fr.subject.pdf
 *.obj
 *.elf
 .objs
+build
 
 # Linker output
 *.ilk
