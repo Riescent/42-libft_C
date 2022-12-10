@@ -41,6 +41,8 @@ SRCS = 			char/ft_isalnum.c	\
 				linked_list/ft_lstnew_bonus.c				\
 				linked_list/ft_lstsize_bonus.c				\
 \
+				math/ft_angle_to_theta.c	\
+\
 				mem/ft_bzero.c		\
 				mem/ft_calloc.c		\
 				mem/ft_memchr.c		\
@@ -83,6 +85,7 @@ HEADERS = 		${INCLUDES}ft_char.h			\
 				${INCLUDES}ft_get_next_line.h	\
 				${INCLUDES}ft_io.h				\
 				${INCLUDES}ft_linked_list.h		\
+				${INCLUDES}ft_math.h			\
 				${INCLUDES}ft_mem.h				\
 				${INCLUDES}ft_numbers.h			\
 				${INCLUDES}ft_string.h			\
