@@ -112,9 +112,11 @@ OBJS =			${addprefix ${DIR_OBJS},${SRCS:.c=.o}}
 OBJS_DEBUG =	${addprefix ${DIR_OBJS},${SRCS:.c=_debug.o}}
 
 
-FLAGS =			-Wall -Wextra -Werror -O3
+FLAGS_NO_O3 =	-Wall -Wextra -Werror
 
-DEBUG_FLAGS	=	-g3 -fsanitize=address
+FLAGS =			${FLAGS_NO_O3} -O3
+
+DEBUG_FLAGS	=	${FLAGS_NO_O3} -g3 -fsanitize=address
 
 
 RMF =	 		rm -f
@@ -142,7 +144,7 @@ ${DIR_OBJS}%.o: ${SRCS_PATH}%.c ${HEADERS} Makefile
 				cc ${FLAGS} -I ${INCLUDES} -c $< -o $@
 
 ${DIR_OBJS}%_debug.o: ${SRCS_PATH}%.c ${HEADERS} Makefile
-				cc ${FLAGS} -I ${INCLUDES} -c $< -o $@
+				cc ${DEBUG_FLAGS} -I ${INCLUDES} -c $< -o $@
 
 clean:
 				${RMF} ${OBJS} ${OBJS_DEBUG}
@@ -160,7 +162,7 @@ echo_objs:
 				@echo ${OBJS}
 
 debug:			${DIR_OBJS}
-				@${MAKE} ${NAME_DEBUG} FLAGS="${FLAGS} ${DEBUG_FLAGS}"
+				@${MAKE} ${NAME_DEBUG}
 
 ${NAME_DEBUG}: ${OBJS_DEBUG}
 				ar rcs ${NAME_DEBUG} ${OBJS_DEBUG}
