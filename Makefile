@@ -29,6 +29,17 @@ SRCS = 			char/ft_isalnum.c	\
 				io/printf/formating/format.c		\
 				io/printf/formating/format_u_x.c	\
 \
+				linked_list/int/lsti_add_back.c					\
+				linked_list/int/lsti_add_front.c				\
+				linked_list/int/lsti_clear.c					\
+				linked_list/int/lsti_delone.c					\
+				linked_list/int/lsti_get_next_free_current.c	\
+				linked_list/int/lsti_iter.c						\
+				linked_list/int/lsti_last.c						\
+				linked_list/int/lsti_map.c						\
+				linked_list/int/lsti_new.c						\
+				linked_list/int/lsti_reverse.c					\
+				linked_list/int/lsti_size.c						\
 				linked_list/ft_lst_get_next_free_current.c	\
 				linked_list/ft_lst_reverse_bonus.c			\
 				linked_list/ft_lstadd_back_bonus.c			\
