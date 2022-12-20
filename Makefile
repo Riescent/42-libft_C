@@ -1,6 +1,10 @@
-NAME =			libft.a
+NAME =				libft.a
 
-NAME_DEBUG =	libft_debug.a
+NAME_DEBUG =		libft_debug.a
+
+NAME_TEST =			libft_test
+
+NAME_TEST_DEBUG =	libft_test_debug
 
 
 SRCS_PATH =		srcs/
@@ -88,10 +92,12 @@ SRCS =\
 				string/split/ft_split_size.c	\
 				string/split/ft_split.c			\
 \
+				string/join/ft_join_strs.c	\
+				string/join/ft_strjoin.c	\
+\
 				string/ft_strchr.c		\
 				string/ft_strdup.c		\
 				string/ft_striteri.c	\
-				string/ft_strjoin.c		\
 				string/ft_strlcat.c		\
 				string/ft_strlcpy.c		\
 				string/ft_strlen.c		\
@@ -106,6 +112,9 @@ SRCS =\
 TEST_DIR = test/
 
 SRCS_TEST =\
+				headers/test/ft_string_test.h.c	\
+\
+\
 				includes/ft_char.h.c		\
 				includes/ft_io.h.c			\
 				includes/ft_linked_list.h.c	\
@@ -113,7 +122,13 @@ SRCS_TEST =\
 				includes/ft_mem.h.c			\
 				includes/ft_numbers.h.c		\
 				includes/ft_string.h.c		\
-				includes/libft.h.c
+				includes/libft.h.c			\
+\
+\
+				srcs/string/join/ft_join_strs_test.c	\
+\
+\
+				main.c
 
 
 HEADERS =\
@@ -138,6 +153,8 @@ OBJS =			${addprefix ${DIR_OBJS},${SRCS:.c=.o}}
 OBJS_DEBUG =	${addprefix ${DIR_OBJS},${SRCS:.c=_debug.o}}
 
 OBJS_TEST =		${addprefix ${TEST_OBJS_DIR},${SRCS_TEST:.c=.o}}
+
+OBJS_TEST_DEBUG =	${addprefix ${TEST_OBJS_DIR},${SRCS_TEST:.c=_debug.o}}
 
 
 FLAGS_NO_O3 =	-Wall -Wextra -Werror
@@ -169,10 +186,10 @@ ${DIR_OBJS}: Makefile
 				@# Executes the script (Creates all folders)
 
 ${DIR_OBJS}%.o: ${SRCS_PATH}%.c ${HEADERS} Makefile
-				cc ${FLAGS} -I ${INCLUDES} -c $< -o $@
+				${CC} ${FLAGS} -I ${INCLUDES} -c $< -o $@
 
 ${DIR_OBJS}%_debug.o: ${SRCS_PATH}%.c ${HEADERS} Makefile
-				cc ${DEBUG_FLAGS} -I ${INCLUDES} -c $< -o $@
+				${CC} ${DEBUG_FLAGS} -I ${INCLUDES} -c $< -o $@
 
 clean:
 				${RMF} ${OBJS} ${OBJS_DEBUG}
@@ -196,12 +213,25 @@ ${NAME_DEBUG}: ${OBJS_DEBUG}
 				ar rcs ${NAME_DEBUG} ${OBJS_DEBUG}
 
 test:			${DIR_OBJS}
-				${MAKE} compile_tests
+				${MAKE} all
+				${MAKE} debug
+				${MAKE} ${NAME_TEST}
+				${MAKE} ${NAME_TEST_DEBUG}
+				./${NAME_TEST}
+				./${NAME_TEST_DEBUG}
 
-compile_tests:	${OBJS_TEST}
-				@echo "Test compiled"
+${NAME_TEST}:	${OBJS_TEST}
+				${CC} ${FLAGS} -I ${INCLUDES} -L. -lft ${OBJS_TEST}\
+					-o ${NAME_TEST}
+
+${NAME_TEST_DEBUG}: ${OBJS_TEST_DEBUG}
+				${CC} ${DEBUG_FLAGS} -I ${INCLUDES} -L. -lft_debug\
+					${OBJS_TEST_DEBUG} -o ${NAME_TEST_DEBUG}
 
 ${TEST_OBJS_DIR}%.o: ${TEST_DIR}%.c ${HEADERS} Makefile
-				${CC} ${FLAGS} -I ${INCLUDES} -c $< -o $@
+				${CC} ${FLAGS} -I ${INCLUDES} -I test/headers -c $< -o $@
 
-.PHONY:			all clean fclean re re_debug echo_objs debug test compile_tests
+${TEST_OBJS_DIR}%_debug.o: ${TEST_DIR}%.c ${HEADERS} Makefile
+				${CC} ${DEBUG_FLAGS} -I ${INCLUDES} -I test/headers -c $< -o $@
+
+.PHONY:			all clean fclean re re_debug echo_objs debug test

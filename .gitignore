@@ -1,6 +1,8 @@
 # Test
 .test
 libftTester
+libft_test
+libft_test_debug
 
 # other
 libft_fr.subject.pdf
