@@ -6,12 +6,15 @@
 /*   By: vfries <vfries@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 11:01:01 by vfries            #+#    #+#             */
-/*   Updated: 2022/12/18 12:07:05 by vfries           ###   ########lyon.fr   */
+/*   Updated: 2022/12/20 14:36:35 by vfries           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_LINKED_LIST_H
 # define FT_LINKED_LIST_H
+
+// Since we almost always use the NULL definition with linked list
+# include <stddef.h>
 
 typedef struct s_list
 {

@@ -6,7 +6,7 @@
 /*   By: vfries <vfries@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/07 19:22:16 by vfries            #+#    #+#             */
-/*   Updated: 2022/12/18 15:12:22 by vfries           ###   ########lyon.fr   */
+/*   Updated: 2022/12/20 14:45:00 by vfries           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define LIBFT_H
 
 # include "ft_char.h"
-# include "ft_get_next_line.h"
 # include "ft_io.h"
 # include "ft_linked_list.h"
 # include "ft_math.h"
