@@ -6,7 +6,7 @@
 /*   By: vfries <vfries@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 11:08:57 by vfries            #+#    #+#             */
-/*   Updated: 2022/12/20 16:08:02 by vfries           ###   ########lyon.fr   */
+/*   Updated: 2022/12/27 13:00:07 by vfries           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_join_strs(char **strs, char const *sep);
 
 char	*ft_strchr(const char *s, int c);
+int		ft_strcmp(const char *s1, const char *s2);
 char	*ft_strdup(const char *s1);
 void	ft_striteri(char *s, void (*f)(unsigned int, char *));
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);

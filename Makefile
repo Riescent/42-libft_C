@@ -96,6 +96,7 @@ SRCS =\
 				string/join/ft_strjoin.c	\
 \
 				string/ft_strchr.c		\
+				string/ft_strcmp.c		\
 				string/ft_strdup.c		\
 				string/ft_striteri.c	\
 				string/ft_strlcat.c		\
