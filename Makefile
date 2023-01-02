@@ -40,6 +40,7 @@ SRCS =\
 				linked_list/int/lsti_add_back.c					\
 				linked_list/int/lsti_add_front.c				\
 				linked_list/int/lsti_clear.c					\
+				linked_list/int/lsti_cpy.c						\
 				linked_list/int/lsti_delone.c					\
 				linked_list/int/lsti_get_next_free_current.c	\
 				linked_list/int/lsti_iter.c						\
