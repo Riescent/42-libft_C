@@ -6,14 +6,14 @@
 /*   By: vfries <vfries@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 21:22:03 by vfries            #+#    #+#             */
-/*   Updated: 2022/12/18 10:06:09 by vfries           ###   ########lyon.fr   */
+/*   Updated: 2023/01/06 05:38:56 by vfries           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_linked_list.h"
 #include <stddef.h>
 
-void	ft_lsti_reverse(t_list_i **lst)
+t_list_i	*ft_lsti_reverse(t_list_i **lst)
 {
 	t_list_i	*previous;
 	t_list_i	*current;
@@ -29,4 +29,5 @@ void	ft_lsti_reverse(t_list_i **lst)
 		current = next;
 	}
 	*lst = previous;
+	return (*lst);
 }
