@@ -6,7 +6,7 @@
 /*   By: vfries <vfries@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 11:01:01 by vfries            #+#    #+#             */
-/*   Updated: 2023/01/02 03:54:03 by vfries           ###   ########lyon.fr   */
+/*   Updated: 2023/01/06 03:32:38 by vfries           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ typedef struct s_list_i
 void		ft_lsti_add_back(t_list_i **lst, t_list_i *new);
 void		ft_lsti_add_front(t_list_i **lst, t_list_i *new);
 void		ft_lsti_clear(t_list_i **lst);
+int			ft_lsti_cmp(t_list_i *lst_1, t_list_i *lst_2);
 t_list_i	*ft_lsti_cpy(t_list_i *lst);
 void		ft_lsti_delone(t_list_i *lst);
 t_list_i	*ft_lsti_get_next_free_current(t_list_i *lst);
