@@ -6,7 +6,7 @@
 /*   By: vfries <vfries@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/06 03:24:48 by vfries            #+#    #+#             */
-/*   Updated: 2023/01/06 03:30:23 by vfries           ###   ########lyon.fr   */
+/*   Updated: 2023/01/06 06:50:34 by vfries           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,9 @@ int	ft_lsti_cmp(t_list_i *lst_1, t_list_i *lst_2)
 		lst_1 = lst_1->next;
 		lst_2 = lst_2->next;
 	}
-	if (lst_1 != NULL && lst_2 == NULL)
-		return (lst_1->content);
 	if (lst_1 == NULL && lst_2 != NULL)
-		return (-lst_2->content);
+		return (-1);
+	if (lst_1 != NULL && lst_2 == NULL)
+		return (1);
 	return (0);
 }
