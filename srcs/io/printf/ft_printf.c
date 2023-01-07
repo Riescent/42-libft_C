@@ -6,12 +6,13 @@
 /*   By: vfries <vfries@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 21:32:51 by vfries            #+#    #+#             */
-/*   Updated: 2022/11/20 04:10:12 by vfries           ###   ########lyon.fr   */
+/*   Updated: 2023/01/07 14:55:52 by vfries           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_linked_list.h"
 #include "ft_string.h"
+#include "ft_io.h"
 #include <stdlib.h>
 #include <stdarg.h>
 #include <unistd.h>
@@ -100,7 +101,7 @@ int	ft_printf(const char *str_format, ...)
 		ft_lstclear(&str_list, &free_content);
 		return (-1);
 	}
-	if (write(1, final_str, char_written) == -1)
+	if (write(STDOUT_FD, final_str, char_written) == -1)
 		char_written = -1;
 	free(final_str);
 	ft_lstclear(&str_list, &free_content);
