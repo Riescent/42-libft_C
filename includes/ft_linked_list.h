@@ -6,7 +6,7 @@
 /*   By: vfries <vfries@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 11:01:01 by vfries            #+#    #+#             */
-/*   Updated: 2023/01/06 05:40:38 by vfries           ###   ########lyon.fr   */
+/*   Updated: 2023/01/09 01:20:06 by vfries           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ typedef struct s_list
 }	t_list;
 
 t_list		*ft_lst_get_next_free_current(t_list *lst, void (*del)(void *));
+void		ft_lst_push(t_list **dst, t_list **src);
 t_list		*ft_lst_reverse(t_list **lst);
 void		ft_lstadd_back(t_list **lst, t_list *new);
 void		ft_lstadd_front(t_list **lst, t_list *new);
@@ -51,6 +52,7 @@ void		ft_lsti_iter(t_list_i *lst, void (*f)(int *));
 t_list_i	*ft_lsti_last(t_list_i *lst);
 t_list_i	*ft_lsti_map(t_list_i *lst, int (*f)(int));
 t_list_i	*ft_lsti_new(int data);
+void		ft_lsti_push(t_list_i **dst, t_list_i **src);
 t_list_i	*ft_lsti_reverse(t_list_i **lst);
 int			ft_lsti_size(t_list_i *lst);
 

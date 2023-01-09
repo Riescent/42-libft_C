@@ -29,9 +29,9 @@ SRCS =\
 				io/putendl_fd.c		\
 				io/putnbr_fd.c		\
 				io/putstr_fd.c		\
-				io/putstr.c	\
+				io/putstr.c			\
 \
-				io/printf/printf.c		\
+				io/printf/printf.c			\
 				io/printf/get_final_str.c	\
 				io/printf/formating/format.c		\
 				io/printf/formating/format_u_x.c	\
@@ -48,40 +48,42 @@ SRCS =\
 				linked_list/int/lsti_last.c						\
 				linked_list/int/lsti_map.c						\
 				linked_list/int/lsti_new.c						\
+				linked_list/int/lsti_push.c						\
 				linked_list/int/lsti_reverse.c					\
 				linked_list/int/lsti_size.c						\
 \
 				linked_list/lst_get_next_free_current.c	\
-				linked_list/lst_reverse.c			\
-				linked_list/lstadd_back.c			\
-				linked_list/lstadd_front.c			\
-				linked_list/lstclear.c				\
-				linked_list/lstdelone.c			\
-				linked_list/lstiter.c				\
-				linked_list/lstlast.c				\
-				linked_list/lstmap.c				\
-				linked_list/lstnew.c				\
-				linked_list/lstsize.c				\
+				linked_list/lst_push.c					\
+				linked_list/lst_reverse.c				\
+				linked_list/lstadd_back.c				\
+				linked_list/lstadd_front.c				\
+				linked_list/lstclear.c					\
+				linked_list/lstdelone.c					\
+				linked_list/lstiter.c					\
+				linked_list/lstlast.c					\
+				linked_list/lstmap.c					\
+				linked_list/lstnew.c					\
+				linked_list/lstsize.c					\
 \
 \
 				math/angle_to_theta.c	\
 \
 \
-				mem/bzero.c		\
+				mem/bzero.c			\
 				mem/calloc.c		\
 				mem/memchr.c		\
 				mem/memcmp.c		\
 				mem/memcpy.c		\
-				mem/memmove.c	\
+				mem/memmove.c		\
 				mem/memset.c		\
 \
 \
 				numbers/swap/swap_double.c	\
 				numbers/swap/swap_int.c		\
-				numbers/swap/swap_long.c		\
+				numbers/swap/swap_long.c	\
 				numbers/swap/swap_size_t.c	\
 				numbers/swap/swap_ssize_t.c	\
-				numbers/swap/swap_uint.c		\
+				numbers/swap/swap_uint.c	\
 \
 				numbers/abs.c	\
 				numbers/atoi.c	\
@@ -90,9 +92,9 @@ SRCS =\
 \
 \
 				string/split/free_split.c	\
-				string/split/split_set.c		\
+				string/split/split_set.c	\
 				string/split/split_size.c	\
-				string/split/split.c			\
+				string/split/split.c		\
 \
 				string/join/join_strs.c	\
 				string/join/strjoin.c	\
@@ -101,14 +103,14 @@ SRCS =\
 				string/strcmp.c		\
 				string/strdup.c		\
 				string/striteri.c	\
-				string/strlcat.c		\
-				string/strlcpy.c		\
+				string/strlcat.c	\
+				string/strlcpy.c	\
 				string/strlen.c		\
-				string/strmapi.c		\
-				string/strncmp.c		\
-				string/strnstr.c		\
-				string/strrchr.c		\
-				string/strtrim.c		\
+				string/strmapi.c	\
+				string/strncmp.c	\
+				string/strnstr.c	\
+				string/strrchr.c	\
+				string/strtrim.c	\
 				string/substr.c
 
 
