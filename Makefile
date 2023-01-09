@@ -10,14 +10,14 @@ NAME_TEST_DEBUG =	libft_test_debug
 SRCS_PATH =		srcs/
 
 SRCS =\
-				char/ft_isalnum.c	\
-				char/ft_isalpha.c	\
-				char/ft_isascii.c	\
-				char/ft_isdigit.c	\
-				char/ft_isprint.c	\
-				char/ft_isspace.c	\
-				char/ft_toupper.c	\
-				char/ft_tolower.c	\
+				char/isalnum.c	\
+				char/isalpha.c	\
+				char/isascii.c	\
+				char/isdigit.c	\
+				char/isprint.c	\
+				char/isspace.c	\
+				char/toupper.c	\
+				char/tolower.c	\
 \
 \
 				io/get_next_line/get_next_line_multi_fd.c		\
@@ -25,13 +25,13 @@ SRCS =\
 				io/get_next_line/get_next_line_utils.c			\
 				io/get_next_line/get_next_line.c				\
 \
-				io/ft_putchar_fd.c		\
-				io/ft_putendl_fd.c		\
-				io/ft_putnbr_fd.c		\
-				io/ft_putstr_fd.c		\
-				io/ft_putstr_bonus.c	\
+				io/putchar_fd.c		\
+				io/putendl_fd.c		\
+				io/putnbr_fd.c		\
+				io/putstr_fd.c		\
+				io/putstr.c	\
 \
-				io/printf/ft_printf.c		\
+				io/printf/printf.c		\
 				io/printf/get_final_str.c	\
 				io/printf/formating/format.c		\
 				io/printf/formating/format_u_x.c	\
@@ -51,65 +51,65 @@ SRCS =\
 				linked_list/int/lsti_reverse.c					\
 				linked_list/int/lsti_size.c						\
 \
-				linked_list/ft_lst_get_next_free_current.c	\
-				linked_list/ft_lst_reverse_bonus.c			\
-				linked_list/ft_lstadd_back_bonus.c			\
-				linked_list/ft_lstadd_front_bonus.c			\
-				linked_list/ft_lstclear_bonus.c				\
-				linked_list/ft_lstdelone_bonus.c			\
-				linked_list/ft_lstiter_bonus.c				\
-				linked_list/ft_lstlast_bonus.c				\
-				linked_list/ft_lstmap_bonus.c				\
-				linked_list/ft_lstnew_bonus.c				\
-				linked_list/ft_lstsize_bonus.c				\
+				linked_list/lst_get_next_free_current.c	\
+				linked_list/lst_reverse.c			\
+				linked_list/lstadd_back.c			\
+				linked_list/lstadd_front.c			\
+				linked_list/lstclear.c				\
+				linked_list/lstdelone.c			\
+				linked_list/lstiter.c				\
+				linked_list/lstlast.c				\
+				linked_list/lstmap.c				\
+				linked_list/lstnew.c				\
+				linked_list/lstsize.c				\
 \
 \
-				math/ft_angle_to_theta.c	\
+				math/angle_to_theta.c	\
 \
 \
-				mem/ft_bzero.c		\
-				mem/ft_calloc.c		\
-				mem/ft_memchr.c		\
-				mem/ft_memcmp.c		\
-				mem/ft_memcpy.c		\
-				mem/ft_memmove.c	\
-				mem/ft_memset.c		\
+				mem/bzero.c		\
+				mem/calloc.c		\
+				mem/memchr.c		\
+				mem/memcmp.c		\
+				mem/memcpy.c		\
+				mem/memmove.c	\
+				mem/memset.c		\
 \
 \
-				numbers/ft_swap/ft_swap_double.c	\
-				numbers/ft_swap/ft_swap_int.c		\
-				numbers/ft_swap/ft_swap_long.c		\
-				numbers/ft_swap/ft_swap_size_t.c	\
-				numbers/ft_swap/ft_swap_ssize_t.c	\
-				numbers/ft_swap/ft_swap_uint.c		\
+				numbers/swap/swap_double.c	\
+				numbers/swap/swap_int.c		\
+				numbers/swap/swap_long.c		\
+				numbers/swap/swap_size_t.c	\
+				numbers/swap/swap_ssize_t.c	\
+				numbers/swap/swap_uint.c		\
 \
-				numbers/ft_abs.c	\
-				numbers/ft_atoi.c	\
-				numbers/ft_atoll.c	\
-				numbers/ft_itoa.c	\
+				numbers/abs.c	\
+				numbers/atoi.c	\
+				numbers/atoll.c	\
+				numbers/itoa.c	\
 \
 \
-				string/split/ft_free_split.c	\
-				string/split/ft_split_set.c		\
-				string/split/ft_split_size.c	\
-				string/split/ft_split.c			\
+				string/split/free_split.c	\
+				string/split/split_set.c		\
+				string/split/split_size.c	\
+				string/split/split.c			\
 \
-				string/join/ft_join_strs.c	\
-				string/join/ft_strjoin.c	\
+				string/join/join_strs.c	\
+				string/join/strjoin.c	\
 \
-				string/ft_strchr.c		\
-				string/ft_strcmp.c		\
-				string/ft_strdup.c		\
-				string/ft_striteri.c	\
-				string/ft_strlcat.c		\
-				string/ft_strlcpy.c		\
-				string/ft_strlen.c		\
-				string/ft_strmapi.c		\
-				string/ft_strncmp.c		\
-				string/ft_strnstr.c		\
-				string/ft_strrchr.c		\
-				string/ft_strtrim.c		\
-				string/ft_substr.c
+				string/strchr.c		\
+				string/strcmp.c		\
+				string/strdup.c		\
+				string/striteri.c	\
+				string/strlcat.c		\
+				string/strlcpy.c		\
+				string/strlen.c		\
+				string/strmapi.c		\
+				string/strncmp.c		\
+				string/strnstr.c		\
+				string/strrchr.c		\
+				string/strtrim.c		\
+				string/substr.c
 
 
 TEST_DIR = test/
@@ -128,7 +128,7 @@ SRCS_TEST =\
 				includes/libft.h.c			\
 \
 \
-				srcs/string/join/ft_join_strs_test.c	\
+				srcs/string/join/join_strs_test.c	\
 \
 \
 				main.c
