@@ -10,6 +10,9 @@ NAME_TEST_DEBUG =	libft_test_debug
 SRCS_PATH =		srcs/
 
 SRCS =\
+				bools/reverse_bool.c	\
+\
+\
 				char/isalnum.c	\
 				char/isalpha.c	\
 				char/isascii.c	\
@@ -99,6 +102,7 @@ SRCS =\
 				string/join/join_strs.c	\
 				string/join/strjoin.c	\
 \
+				string/skip_char.c	\
 				string/strchr.c		\
 				string/strcmp.c		\
 				string/strdup.c		\
@@ -120,6 +124,7 @@ SRCS_TEST =\
 				headers/test/ft_string_test.h.c	\
 \
 \
+				includes/ft_bools.h.c		\
 				includes/ft_char.h.c		\
 				includes/ft_io.h.c			\
 				includes/ft_linked_list.h.c	\
@@ -137,6 +142,7 @@ SRCS_TEST =\
 
 
 HEADERS =\
+				${INCLUDES}ft_bools.h		\
 				${INCLUDES}ft_char.h		\
 				${INCLUDES}ft_io.h			\
 				${INCLUDES}ft_linked_list.h	\

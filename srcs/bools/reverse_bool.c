@@ -1,25 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   reverse_bool.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vfries <vfries@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/07 19:22:16 by vfries            #+#    #+#             */
-/*   Updated: 2023/01/13 19:36:29 by vfries           ###   ########lyon.fr   */
+/*   Created: 2023/01/13 19:40:37 by vfries            #+#    #+#             */
+/*   Updated: 2023/01/13 19:41:17 by vfries           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include <stdbool.h>
 
-# include "ft_bools.h"
-# include "ft_char.h"
-# include "ft_io.h"
-# include "ft_linked_list.h"
-# include "ft_math.h"
-# include "ft_mem.h"
-# include "ft_numbers.h"
-# include "ft_string.h"
-
-#endif
+void	ft_reverse_bool(bool *boolean)
+{
+	if (*boolean == true)
+		*boolean = false;
+	else
+		*boolean = true;
+}

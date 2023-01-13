@@ -6,7 +6,7 @@
 /*   By: vfries <vfries@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 11:08:57 by vfries            #+#    #+#             */
-/*   Updated: 2022/12/27 13:00:07 by vfries           ###   ########lyon.fr   */
+/*   Updated: 2023/01/13 19:32:55 by vfries           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ void	ft_free_split(void *strs);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_join_strs(char **strs, char const *sep);
 
+char	*ft_skip_char(char *str, char c);
 char	*ft_strchr(const char *s, int c);
 int		ft_strcmp(const char *s1, const char *s2);
 char	*ft_strdup(const char *s1);
