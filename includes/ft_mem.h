@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_mem.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vfries <vfries@student.42lyon.fr>          +#+  +:+       +#+        */
+/*   By: gd-harco <gd-harco@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 11:04:20 by vfries            #+#    #+#             */
-/*   Updated: 2022/11/19 11:06:37 by vfries           ###   ########lyon.fr   */
+/*   Updated: 2023/04/08 13:43:43 by gd-harco         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define FT_MEM_H
 
 # include <stddef.h>
+
 
 void	ft_bzero(void *s, size_t n);
 
