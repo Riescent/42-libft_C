@@ -192,7 +192,7 @@ SRCS_TEST =\
 
 
 LIBFT_INCLUDE = include/
-DIR_INCLUDES =	\
+DIR_INCLUDES =\
 	$(LIBFT_INCLUDE)
 INCLUDES =	$(addprefix -I , $(DIR_INCLUDES))
 
@@ -283,8 +283,7 @@ $(TEST_BUILD_DIR)%_debug.o:	$(TEST_DIR)%.c
 
 .PHONY:		clean
 clean:
-			$(RM) $(OBJS) $(OBJS_DEBUG) $(OBJS_TEST) $(OBJS_TEST_DEBUG)\
-				  $(DEPS) $(DEPS_DEBUG) $(DEPS_TEST) $(DEPS_TEST_DEBUG)
+			$(RM) -r $(DIR_BUILD)
 
 .PHONY:		fclean
 fclean:		clean
